@@ -20,6 +20,8 @@
 		6D1D3EDC162DD98A003F8764 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EDA162DD98A003F8764 /* InfoPlist.strings */; };
 		6D1D3EDF162DD98A003F8764 /* HealthyBytesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EDE162DD98A003F8764 /* HealthyBytesTests.m */; };
 		6D1D3EE9162DDE40003F8764 /* FindTestLocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */; };
+		6D1D3EED162DE221003F8764 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EEB162DE221003F8764 /* MapViewController.m */; };
+		6D1D3EEE162DE221003F8764 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EEC162DE221003F8764 /* MapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,9 @@
 		6D1D3EDD162DD98A003F8764 /* HealthyBytesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthyBytesTests.h; sourceTree = "<group>"; };
 		6D1D3EDE162DD98A003F8764 /* HealthyBytesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthyBytesTests.m; sourceTree = "<group>"; };
 		6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindTestLocationsViewController.xib; sourceTree = "<group>"; };
+		6D1D3EEA162DE221003F8764 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		6D1D3EEB162DE221003F8764 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		6D1D3EEC162DE221003F8764 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,9 @@
 				6D1D3EC2162DD98A003F8764 /* FindTestLocationsViewController.h */,
 				6D1D3EC3162DD98A003F8764 /* FindTestLocationsViewController.m */,
 				6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */,
+				6D1D3EEA162DE221003F8764 /* MapViewController.h */,
+				6D1D3EEB162DE221003F8764 /* MapViewController.m */,
+				6D1D3EEC162DE221003F8764 /* MapViewController.xib */,
 				6D1D3EB7162DD98A003F8764 /* Supporting Files */,
 			);
 			path = HealthyBytes;
@@ -224,6 +232,7 @@
 			files = (
 				6D1D3EBB162DD98A003F8764 /* InfoPlist.strings in Resources */,
 				6D1D3EE9162DDE40003F8764 /* FindTestLocationsViewController.xib in Resources */,
+				6D1D3EEE162DE221003F8764 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +270,7 @@
 				6D1D3EBD162DD98A003F8764 /* main.m in Sources */,
 				6D1D3EC1162DD98A003F8764 /* AppDelegate.m in Sources */,
 				6D1D3EC4162DD98A003F8764 /* FindTestLocationsViewController.m in Sources */,
+				6D1D3EED162DE221003F8764 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
