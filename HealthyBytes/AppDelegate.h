@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FindTestLocationsViewController.h"
 
-@class ViewController;
+@class FindTestLocationsViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) FindTestLocationsViewController *findTestLocationsViewController;
 
 @end

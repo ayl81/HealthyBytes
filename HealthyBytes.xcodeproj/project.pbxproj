@@ -13,14 +13,13 @@
 		6D1D3EBB162DD98A003F8764 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EB9162DD98A003F8764 /* InfoPlist.strings */; };
 		6D1D3EBD162DD98A003F8764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EBC162DD98A003F8764 /* main.m */; };
 		6D1D3EC1162DD98A003F8764 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EC0162DD98A003F8764 /* AppDelegate.m */; };
-		6D1D3EC4162DD98A003F8764 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EC3162DD98A003F8764 /* ViewController.m */; };
-		6D1D3EC7162DD98A003F8764 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EC5162DD98A003F8764 /* ViewController_iPhone.xib */; };
-		6D1D3ECA162DD98A003F8764 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EC8162DD98A003F8764 /* ViewController_iPad.xib */; };
+		6D1D3EC4162DD98A003F8764 /* FindTestLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EC3162DD98A003F8764 /* FindTestLocationsViewController.m */; };
 		6D1D3ED2162DD98A003F8764 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D3ED1162DD98A003F8764 /* SenTestingKit.framework */; };
 		6D1D3ED3162DD98A003F8764 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D3EB0162DD98A003F8764 /* UIKit.framework */; };
 		6D1D3ED4162DD98A003F8764 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D3EB2162DD98A003F8764 /* Foundation.framework */; };
 		6D1D3EDC162DD98A003F8764 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EDA162DD98A003F8764 /* InfoPlist.strings */; };
 		6D1D3EDF162DD98A003F8764 /* HealthyBytesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EDE162DD98A003F8764 /* HealthyBytesTests.m */; };
+		6D1D3EE9162DDE40003F8764 /* FindTestLocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,16 +43,15 @@
 		6D1D3EBE162DD98A003F8764 /* HealthyBytes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthyBytes-Prefix.pch"; sourceTree = "<group>"; };
 		6D1D3EBF162DD98A003F8764 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D1D3EC0162DD98A003F8764 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6D1D3EC2162DD98A003F8764 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6D1D3EC3162DD98A003F8764 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6D1D3EC6162DD98A003F8764 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		6D1D3EC9162DD98A003F8764 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		6D1D3EC2162DD98A003F8764 /* FindTestLocationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindTestLocationsViewController.h; sourceTree = "<group>"; };
+		6D1D3EC3162DD98A003F8764 /* FindTestLocationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindTestLocationsViewController.m; sourceTree = "<group>"; };
 		6D1D3ED0162DD98A003F8764 /* HealthyBytesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthyBytesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D3ED1162DD98A003F8764 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6D1D3ED9162DD98A003F8764 /* HealthyBytesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HealthyBytesTests-Info.plist"; sourceTree = "<group>"; };
 		6D1D3EDB162DD98A003F8764 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D1D3EDD162DD98A003F8764 /* HealthyBytesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthyBytesTests.h; sourceTree = "<group>"; };
 		6D1D3EDE162DD98A003F8764 /* HealthyBytesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthyBytesTests.m; sourceTree = "<group>"; };
+		6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindTestLocationsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +113,9 @@
 			children = (
 				6D1D3EBF162DD98A003F8764 /* AppDelegate.h */,
 				6D1D3EC0162DD98A003F8764 /* AppDelegate.m */,
-				6D1D3EC2162DD98A003F8764 /* ViewController.h */,
-				6D1D3EC3162DD98A003F8764 /* ViewController.m */,
-				6D1D3EC5162DD98A003F8764 /* ViewController_iPhone.xib */,
-				6D1D3EC8162DD98A003F8764 /* ViewController_iPad.xib */,
+				6D1D3EC2162DD98A003F8764 /* FindTestLocationsViewController.h */,
+				6D1D3EC3162DD98A003F8764 /* FindTestLocationsViewController.m */,
+				6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */,
 				6D1D3EB7162DD98A003F8764 /* Supporting Files */,
 			);
 			path = HealthyBytes;
@@ -226,8 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D1D3EBB162DD98A003F8764 /* InfoPlist.strings in Resources */,
-				6D1D3EC7162DD98A003F8764 /* ViewController_iPhone.xib in Resources */,
-				6D1D3ECA162DD98A003F8764 /* ViewController_iPad.xib in Resources */,
+				6D1D3EE9162DDE40003F8764 /* FindTestLocationsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +260,7 @@
 			files = (
 				6D1D3EBD162DD98A003F8764 /* main.m in Sources */,
 				6D1D3EC1162DD98A003F8764 /* AppDelegate.m in Sources */,
-				6D1D3EC4162DD98A003F8764 /* ViewController.m in Sources */,
+				6D1D3EC4162DD98A003F8764 /* FindTestLocationsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,22 +289,6 @@
 				6D1D3EBA162DD98A003F8764 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6D1D3EC5162DD98A003F8764 /* ViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D1D3EC6162DD98A003F8764 /* en */,
-			);
-			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		6D1D3EC8162DD98A003F8764 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D1D3EC9162DD98A003F8764 /* en */,
-			);
-			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		6D1D3EDA162DD98A003F8764 /* InfoPlist.strings */ = {
