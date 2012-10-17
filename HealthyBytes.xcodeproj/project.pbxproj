@@ -22,6 +22,15 @@
 		6D1D3EE9162DDE40003F8764 /* FindTestLocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */; };
 		6D1D3EED162DE221003F8764 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EEB162DE221003F8764 /* MapViewController.m */; };
 		6D1D3EEE162DE221003F8764 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D3EEC162DE221003F8764 /* MapViewController.xib */; };
+		6D1D3EF1162DE487003F8764 /* TestLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3EF0162DE487003F8764 /* TestLocationAnnotation.m */; };
+		6D1D3EF3162DEDDD003F8764 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D3EF2162DEDDC003F8764 /* CoreLocation.framework */; };
+		6D1D3EF5162DEDEA003F8764 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D3EF4162DEDEA003F8764 /* MapKit.framework */; };
+		6D1D3F18162DEEB6003F8764 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F0D162DEEB6003F8764 /* NSObject+SBJSON.m */; };
+		6D1D3F19162DEEB6003F8764 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F0F162DEEB6003F8764 /* NSString+SBJSON.m */; };
+		6D1D3F1A162DEEB6003F8764 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F11162DEEB6003F8764 /* SBJSON.m */; };
+		6D1D3F1B162DEEB6003F8764 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F13162DEEB6003F8764 /* SBJsonBase.m */; };
+		6D1D3F1C162DEEB6003F8764 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F15162DEEB6003F8764 /* SBJsonParser.m */; };
+		6D1D3F1D162DEEB6003F8764 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F17162DEEB6003F8764 /* SBJsonWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +66,23 @@
 		6D1D3EEA162DE221003F8764 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		6D1D3EEB162DE221003F8764 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		6D1D3EEC162DE221003F8764 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		6D1D3EEF162DE487003F8764 /* TestLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLocationAnnotation.h; sourceTree = "<group>"; };
+		6D1D3EF0162DE487003F8764 /* TestLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLocationAnnotation.m; sourceTree = "<group>"; };
+		6D1D3EF2162DEDDC003F8764 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6D1D3EF4162DEDEA003F8764 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6D1D3F0B162DEEB6003F8764 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		6D1D3F0C162DEEB6003F8764 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		6D1D3F0D162DEEB6003F8764 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		6D1D3F0E162DEEB6003F8764 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		6D1D3F0F162DEEB6003F8764 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		6D1D3F10162DEEB6003F8764 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		6D1D3F11162DEEB6003F8764 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		6D1D3F12162DEEB6003F8764 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		6D1D3F13162DEEB6003F8764 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		6D1D3F14162DEEB6003F8764 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		6D1D3F15162DEEB6003F8764 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		6D1D3F16162DEEB6003F8764 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		6D1D3F17162DEEB6003F8764 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D1D3EF5162DEDEA003F8764 /* MapKit.framework in Frameworks */,
+				6D1D3EF3162DEDDD003F8764 /* CoreLocation.framework in Frameworks */,
 				6D1D3EB1162DD98A003F8764 /* UIKit.framework in Frameworks */,
 				6D1D3EB3162DD98A003F8764 /* Foundation.framework in Frameworks */,
 				6D1D3EB5162DD98A003F8764 /* CoreGraphics.framework in Frameworks */,
@@ -105,6 +133,8 @@
 		6D1D3EAF162DD98A003F8764 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D1D3EF2162DEDDC003F8764 /* CoreLocation.framework */,
+				6D1D3EF4162DEDEA003F8764 /* MapKit.framework */,
 				6D1D3EB0162DD98A003F8764 /* UIKit.framework */,
 				6D1D3EB2162DD98A003F8764 /* Foundation.framework */,
 				6D1D3EB4162DD98A003F8764 /* CoreGraphics.framework */,
@@ -124,6 +154,8 @@
 				6D1D3EEA162DE221003F8764 /* MapViewController.h */,
 				6D1D3EEB162DE221003F8764 /* MapViewController.m */,
 				6D1D3EEC162DE221003F8764 /* MapViewController.xib */,
+				6D1D3EEF162DE487003F8764 /* TestLocationAnnotation.h */,
+				6D1D3EF0162DE487003F8764 /* TestLocationAnnotation.m */,
 				6D1D3EB7162DD98A003F8764 /* Supporting Files */,
 			);
 			path = HealthyBytes;
@@ -132,6 +164,7 @@
 		6D1D3EB7162DD98A003F8764 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D1D3F0A162DEEB6003F8764 /* JSON */,
 				6D1D3EB8162DD98A003F8764 /* HealthyBytes-Info.plist */,
 				6D1D3EB9162DD98A003F8764 /* InfoPlist.strings */,
 				6D1D3EBC162DD98A003F8764 /* main.m */,
@@ -157,6 +190,26 @@
 				6D1D3EDA162DD98A003F8764 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D1D3F0A162DEEB6003F8764 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				6D1D3F0B162DEEB6003F8764 /* JSON.h */,
+				6D1D3F0C162DEEB6003F8764 /* NSObject+SBJSON.h */,
+				6D1D3F0D162DEEB6003F8764 /* NSObject+SBJSON.m */,
+				6D1D3F0E162DEEB6003F8764 /* NSString+SBJSON.h */,
+				6D1D3F0F162DEEB6003F8764 /* NSString+SBJSON.m */,
+				6D1D3F10162DEEB6003F8764 /* SBJSON.h */,
+				6D1D3F11162DEEB6003F8764 /* SBJSON.m */,
+				6D1D3F12162DEEB6003F8764 /* SBJsonBase.h */,
+				6D1D3F13162DEEB6003F8764 /* SBJsonBase.m */,
+				6D1D3F14162DEEB6003F8764 /* SBJsonParser.h */,
+				6D1D3F15162DEEB6003F8764 /* SBJsonParser.m */,
+				6D1D3F16162DEEB6003F8764 /* SBJsonWriter.h */,
+				6D1D3F17162DEEB6003F8764 /* SBJsonWriter.m */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +324,13 @@
 				6D1D3EC1162DD98A003F8764 /* AppDelegate.m in Sources */,
 				6D1D3EC4162DD98A003F8764 /* FindTestLocationsViewController.m in Sources */,
 				6D1D3EED162DE221003F8764 /* MapViewController.m in Sources */,
+				6D1D3EF1162DE487003F8764 /* TestLocationAnnotation.m in Sources */,
+				6D1D3F18162DEEB6003F8764 /* NSObject+SBJSON.m in Sources */,
+				6D1D3F19162DEEB6003F8764 /* NSString+SBJSON.m in Sources */,
+				6D1D3F1A162DEEB6003F8764 /* SBJSON.m in Sources */,
+				6D1D3F1B162DEEB6003F8764 /* SBJsonBase.m in Sources */,
+				6D1D3F1C162DEEB6003F8764 /* SBJsonParser.m in Sources */,
+				6D1D3F1D162DEEB6003F8764 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

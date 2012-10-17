@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TestLocationAnnotation.h"
 
 @interface MapViewController : UIViewController
+{
+    MKMapView *mapView;
+    NSArray *testLocations;
+}
+
+@property (nonatomic, retain) NSArray *testLocations;
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 @end

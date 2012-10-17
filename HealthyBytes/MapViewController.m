@@ -8,11 +8,9 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController ()
-
-@end
-
 @implementation MapViewController
+
+@synthesize mapView, testLocations;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +25,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSEnumerator *e = [testLocations objectEnumerator];
+    NSDictionary *testLocation;
+    while (testLocation = [e nextObject])
+    {
+        TestLocationAnnotation *testLocationAnnotation = [[TestLocationAnnotation alloc] init];
+        
+        CLLocationCoordinate2D testLocationCoordinate;
+        testLocationCoordinate.longitude = [[testLocation objectForKey:@"lon"] doubleValue];
+        testLocationCoordinate.latitude = [[testLocation objectForKey:@"lat"] doubleValue];
+        testLocationAnnotation.coordinateOfTestLocation = testLocationCoordinate;
+        
+        NSString *nameOfLocation = [testLocation objectForKey:@"name"];
+        testLocationAnnotation.testLocationName = nameOfLocation;
+        
+        NSLog(@"test location lon: %f; lat: %f; name: %@", testLocationCoordinate.longitude, testLocationCoordinate.latitude, testLocationAnnotation.testLocationName);
+        
+        [self.mapView addAnnotation:testLocationAnnotation];
+    }
 }
 
 - (void)viewDidUnload
@@ -39,6 +55,44 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark -
+#pragma mark MKMapViewDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // if it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // try to dequeue an existing pin view first
+    static NSString* testLocationAnnotationIdentifier = @"testLocationAnnotationIdentifier";
+    MKPinAnnotationView* pinView = (MKPinAnnotationView *)
+    [mapView dequeueReusableAnnotationViewWithIdentifier:testLocationAnnotationIdentifier];
+    if (!pinView)
+    {
+        // if an existing pin view was not available, create one
+        MKPinAnnotationView *customPinView = [[MKPinAnnotationView alloc]
+                                               initWithAnnotation:annotation reuseIdentifier:testLocationAnnotationIdentifier];
+        customPinView.pinColor = MKPinAnnotationColorPurple;
+        customPinView.animatesDrop = YES;
+        customPinView.canShowCallout = YES;
+        
+        // add a detail disclosure button to the callout which will open a new view controller page
+        //
+        // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
+        //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+        //
+        UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [rightButton addTarget:self
+                        action:@selector(showDetails:)
+              forControlEvents:UIControlEventTouchUpInside];
+        customPinView.rightCalloutAccessoryView = rightButton;
+        
+        return customPinView;
+    }
+    return nil;
 }
 
 @end

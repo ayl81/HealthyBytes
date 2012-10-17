@@ -12,6 +12,8 @@
 
 @implementation AppDelegate
 
+@synthesize navigationController, findTestLocationsViewController, window;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -21,7 +23,11 @@
     } else {
         self.findTestLocationsViewController = [[FindTestLocationsViewController alloc] initWithNibName:@"FindTestLocationsViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.findTestLocationsViewController;
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.findTestLocationsViewController];
+    [self.window addSubview:self.navigationController.view];
+    
+    //self.window.rootViewController = self.findTestLocationsViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
