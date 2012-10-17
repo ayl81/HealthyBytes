@@ -24,6 +24,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // to show the user location
+    self.mapView.showsUserLocation = YES;
+    
     // Do any additional setup after loading the view from its nib.
     NSEnumerator *e = [testLocations objectEnumerator];
     NSDictionary *testLocation;
@@ -80,10 +84,6 @@
         customPinView.canShowCallout = YES;
         
         // add a detail disclosure button to the callout which will open a new view controller page
-        //
-        // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
-        //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
-        //
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [rightButton addTarget:self
                         action:@selector(showDetails:)
