@@ -43,17 +43,17 @@
 
 - (IBAction) findTestLocationsWithCurrentLocation:(id)sender
 {
-    if (locationManager == nil)
+    if (self.locationManager == nil)
     {
-        locationManager = [[CLLocationManager alloc] init];
-        [locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-        [locationManager setDelegate:self];
+        self.locationManager = [[CLLocationManager alloc] init];
+        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+        [self.locationManager setDelegate:self];
     }
     
-	[[self locationManager] startUpdatingLocation];
-    location = [locationManager location];
+	[self.locationManager startUpdatingLocation];
+    self.location = [locationManager location];
     
-    CLLocationCoordinate2D coordinate = [location coordinate];             
+    CLLocationCoordinate2D coordinate = [self.location coordinate];
     latFindTestLocations = coordinate.latitude;
     lonFindTestLocations = coordinate.longitude;
 	NSLog (@"longitude is: %f; latitude is: %f", lonFindTestLocations, lonFindTestLocations);
@@ -66,7 +66,8 @@
 - (IBAction) findTestLocationsWithCoordinates:(id)sender
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:self.searchStringTextField.text completionHandler:^(NSArray *placemarks, NSError *error)
+    NSString *userInputLocation = self.searchStringTextField.text;
+    [geocoder geocodeAddressString:userInputLocation completionHandler:^(NSArray *placemarks, NSError *error)
      {
          NSLog(@"geocodeAddressString:completionHandler: Completion Handler called!");
          if (error){
@@ -76,12 +77,16 @@
          
          NSLog(@"Received placemarks: %@", placemarks);
          
-         CLLocationCoordinate2D coordinate = [location coordinate];
+         CLPlacemark *userInputLocationPlacemark = [placemarks objectAtIndex:0];
+         self.location = userInputLocationPlacemark.location;
+         
+         CLLocationCoordinate2D coordinate = [self.location coordinate];
          latFindTestLocations = coordinate.latitude;
          lonFindTestLocations = coordinate.longitude;
-         NSLog (@"longitude is: %f; latitude is: %f", lonFindTestLocations, lonFindTestLocations);
+         NSLog (@"longitude is: %f; latitude is: %f", lonFindTestLocations, latFindTestLocations);
          
          MapViewController *mapViewController = [[MapViewController alloc] init];
+         mapViewController.locationName = userInputLocationPlacemark.locality;
          mapViewController.testLocations = [[self sureScriptQuery] valueForKey:@"providers"];
          [self.navigationController pushViewController:mapViewController animated:YES];
      }];

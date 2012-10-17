@@ -13,9 +13,11 @@
 {
     MKMapView *mapView;
     NSArray *testLocations;
+    NSString *locationName;
 }
 
 @property (nonatomic, retain) NSArray *testLocations;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) NSString *locationName;
 
 @end

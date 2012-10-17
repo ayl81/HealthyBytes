@@ -10,7 +10,7 @@
 
 @implementation MapViewController
 
-@synthesize mapView, testLocations;
+@synthesize mapView, testLocations,locationName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +24,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //mapViewController.title = [@"Test Centers Near " stringByAppendingString:userInputLocationPlacemark.locality];
+    UILabel* tlabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0, 300, 40)];
+    tlabel.text = [@"Test centers near " stringByAppendingString:self.locationName]; 
+    tlabel.textColor = [UIColor whiteColor];
+    tlabel.backgroundColor = [UIColor clearColor];
+    //tlabel.font = [UIFont boldSystemFontOfSize:16.0];
+    tlabel.adjustsFontSizeToFitWidth = YES;
+    self.navigationItem.titleView = tlabel;
     
     // to show the user location
     self.mapView.showsUserLocation = YES;
@@ -40,8 +49,8 @@
         testLocationCoordinate.latitude = [[testLocation objectForKey:@"lat"] doubleValue];
         testLocationAnnotation.coordinateOfTestLocation = testLocationCoordinate;
         
-        NSString *nameOfLocation = [testLocation objectForKey:@"name"];
-        testLocationAnnotation.testLocationName = nameOfLocation;
+        self.locationName = [testLocation objectForKey:@"name"];
+        testLocationAnnotation.testLocationName = self.locationName;
         
         NSLog(@"test location lon: %f; lat: %f; name: %@", testLocationCoordinate.longitude, testLocationCoordinate.latitude, testLocationAnnotation.testLocationName);
         
