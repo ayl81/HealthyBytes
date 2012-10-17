@@ -25,6 +25,7 @@
 
 - (IBAction) findTestLocationsWithCurrentLocation:(id)sender;
 - (IBAction) findTestLocationsWithCoordinates:(id)sender;
+- (IBAction) doneEditing:(id)sender;
 - (NSDictionary *)sureScriptQuery;
 
 @property (nonatomic, retain) CLLocationManager *locationManager;

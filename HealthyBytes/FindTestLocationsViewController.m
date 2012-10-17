@@ -34,6 +34,13 @@
     }
 }
 
+#pragma mark -
+#pragma mark - IBActions
+- (IBAction)doneEditing:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
 - (IBAction) findTestLocationsWithCurrentLocation:(id)sender
 {
     if (locationManager == nil)
@@ -59,7 +66,6 @@
 - (IBAction) findTestLocationsWithCoordinates:(id)sender
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-
     [geocoder geocodeAddressString:self.searchStringTextField.text completionHandler:^(NSArray *placemarks, NSError *error)
      {
          NSLog(@"geocodeAddressString:completionHandler: Completion Handler called!");
@@ -81,7 +87,8 @@
      }];
 }
 
-// Get Surescript results
+#pragma mark -
+#pragma mark - Surescript Results
 - (NSArray *)sureScriptQuery
 {
     latFindTestLocations = 44.979965;           // dummy data
@@ -94,8 +101,8 @@
 	return [json JSONValue];
 }
 
+#pragma mark -
 #pragma mark - CLLocationManagerDelegate
-
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     // Configure the new event with information from the location.
@@ -110,8 +117,8 @@
     NSLog (@"location manager did not find a location...");
 }
 
+#pragma mark -
 #pragma mark - UIScrollViewDelegate
-
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     // dismiss the keyboard upon a scroll
