@@ -31,6 +31,8 @@
 		6D1D3F1B162DEEB6003F8764 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F13162DEEB6003F8764 /* SBJsonBase.m */; };
 		6D1D3F1C162DEEB6003F8764 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F15162DEEB6003F8764 /* SBJsonParser.m */; };
 		6D1D3F1D162DEEB6003F8764 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F17162DEEB6003F8764 /* SBJsonWriter.m */; };
+		6D402E5416324AB40097D1D8 /* HealthRiskAssessmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E5216324AB40097D1D8 /* HealthRiskAssessmentViewController.m */; };
+		6D402E5516324AB40097D1D8 /* HealthRiskAssessmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D402E5316324AB40097D1D8 /* HealthRiskAssessmentViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,9 @@
 		6D1D3F15162DEEB6003F8764 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		6D1D3F16162DEEB6003F8764 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		6D1D3F17162DEEB6003F8764 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		6D402E5116324AB40097D1D8 /* HealthRiskAssessmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthRiskAssessmentViewController.h; path = ../HealthRiskAssessmentViewController.h; sourceTree = "<group>"; };
+		6D402E5216324AB40097D1D8 /* HealthRiskAssessmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthRiskAssessmentViewController.m; path = ../HealthRiskAssessmentViewController.m; sourceTree = "<group>"; };
+		6D402E5316324AB40097D1D8 /* HealthRiskAssessmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HealthRiskAssessmentViewController.xib; path = ../HealthRiskAssessmentViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +153,9 @@
 			children = (
 				6D1D3EBF162DD98A003F8764 /* AppDelegate.h */,
 				6D1D3EC0162DD98A003F8764 /* AppDelegate.m */,
+				6D402E5116324AB40097D1D8 /* HealthRiskAssessmentViewController.h */,
+				6D402E5216324AB40097D1D8 /* HealthRiskAssessmentViewController.m */,
+				6D402E5316324AB40097D1D8 /* HealthRiskAssessmentViewController.xib */,
 				6D1D3EC2162DD98A003F8764 /* FindTestLocationsViewController.h */,
 				6D1D3EC3162DD98A003F8764 /* FindTestLocationsViewController.m */,
 				6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */,
@@ -286,6 +294,7 @@
 				6D1D3EBB162DD98A003F8764 /* InfoPlist.strings in Resources */,
 				6D1D3EE9162DDE40003F8764 /* FindTestLocationsViewController.xib in Resources */,
 				6D1D3EEE162DE221003F8764 /* MapViewController.xib in Resources */,
+				6D402E5516324AB40097D1D8 /* HealthRiskAssessmentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +340,7 @@
 				6D1D3F1B162DEEB6003F8764 /* SBJsonBase.m in Sources */,
 				6D1D3F1C162DEEB6003F8764 /* SBJsonParser.m in Sources */,
 				6D1D3F1D162DEEB6003F8764 /* SBJsonWriter.m in Sources */,
+				6D402E5416324AB40097D1D8 /* HealthRiskAssessmentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +508,7 @@
 				6D1D3EE4162DD98A003F8764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D1D3EE5162DD98A003F8764 /* Build configuration list for PBXNativeTarget "HealthyBytesTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +517,7 @@
 				6D1D3EE7162DD98A003F8764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

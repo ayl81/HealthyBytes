@@ -19,12 +19,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.findTestLocationsViewController = [[FindTestLocationsViewController alloc] initWithNibName:@"FindTestLocationsViewController" bundle:nil];
+        self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController" bundle:nil];
     } else {
-        self.findTestLocationsViewController = [[FindTestLocationsViewController alloc] initWithNibName:@"FindTestLocationsViewController_iPad" bundle:nil];
+        self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController_iPad" bundle:nil];
     }
     
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.findTestLocationsViewController];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.healthRiskAssessmentViewController];
     [self.window addSubview:self.navigationController.view];
     
     //self.window.rootViewController = self.findTestLocationsViewController;
