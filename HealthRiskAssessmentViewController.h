@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HealthRiskAssessmentQuestions.h"
 
 @interface HealthRiskAssessmentViewController : UITableViewController
+{
+    HealthRiskAssessmentQuestions *healthRiskAssessmentQuestions;
+}
 
+@property (nonatomic, retain) NSArray *colorNames;
+@property (nonatomic, retain) HealthRiskAssessmentQuestions *healthRiskAssessmentQuestion;
 @end

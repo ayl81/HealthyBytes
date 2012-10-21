@@ -8,11 +8,9 @@
 
 #import "HealthRiskAssessmentViewController.h"
 
-@interface HealthRiskAssessmentViewController ()
-
-@end
-
 @implementation HealthRiskAssessmentViewController
+
+@synthesize healthRiskAssessmentQuestion;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +30,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView reloadData];
+    [self.tableView setContentOffset:CGPointZero animated:NO];
+    self.title = @"Health Risk Assessment";
 }
 
 - (void)viewDidUnload
@@ -50,16 +51,34 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+	/*
+	 The number of rows varies by section.
+	 */
+    NSInteger rows = 0;
+    switch (section) {
+        case 0:
+            rows = 4;           // physical 
+            break;
+        case 1:
+            rows = 3;           // health 
+            break;
+        case 2:
+            rows = 2;           // blood pressure
+            break;
+        case 3:
+            rows = 3;           // cholestrol
+            break;
+        default:
+            break;
+    }
+    //return [self.colorNames count];
+    return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,11 +86,91 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
     
+    // Configure the cell.
+    //cell.textLabel.text = [self.colorNames objectAtIndex: [indexPath row]];
+    
+    // Configure the cell...
+    NSString *cellText = nil;
+    cell.detailTextLabel.text = nil;
+    
+    switch (indexPath.section) {
+        case 0:
+            cellText = [self.healthRiskAssessmentQuestion.physicalQuestions objectAtIndex:indexPath.row];  
+            break;
+        case 1:
+            cellText = [self.healthRiskAssessmentQuestion.healthQuestions objectAtIndex:indexPath.row];
+            if (indexPath.row == 0)
+            {
+                cell.detailTextLabel.text = @"Also known as Myocardial Infarction (MI).";
+            }
+            break;
+        case 2:
+            cellText = [self.healthRiskAssessmentQuestion.bloodPressureQuestions objectAtIndex:indexPath.row];
+            break;
+        case 3:
+            cellText = [self.healthRiskAssessmentQuestion.cholesterolQuestions objectAtIndex:indexPath.row];
+            break;
+        default:
+            break;
+    }
+    /*
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:cell.contentView.frame] ;
+    titleLabel.numberOfLines = 2;
+    titleLabel.font = [UIFont boldSystemFontOfSize:12];
+    titleLabel.text = @"testing";
+    [cell.contentView addSubview:titleLabel];*/
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text = cellText;
     return cell;
+    
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    NSString *title = nil;
+    switch (section) {
+        case 0:
+            break;
+        case 1:
+            title = @"Has a doctor ever told you that you had a:";
+            break;
+        case 2:
+            title = @"Blood Pressure";
+            break;
+        case 3:
+            title = @"Cholesterol";
+            break;
+        default:
+            break;
+    }
+    return title;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    
+    NSString *title = nil;
+    switch (section) {
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            title = @"skip this section if you have not been screened in the last year";
+            break;
+        case 3:
+            title = @"skip this section if you have not been screened in the last year";
+            break;
+        default:
+            break;
+    }
+    
+    return title;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

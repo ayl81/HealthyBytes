@@ -33,6 +33,7 @@
 		6D1D3F1D162DEEB6003F8764 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D3F17162DEEB6003F8764 /* SBJsonWriter.m */; };
 		6D402E5416324AB40097D1D8 /* HealthRiskAssessmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E5216324AB40097D1D8 /* HealthRiskAssessmentViewController.m */; };
 		6D402E5516324AB40097D1D8 /* HealthRiskAssessmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D402E5316324AB40097D1D8 /* HealthRiskAssessmentViewController.xib */; };
+		6D402E601633B4870097D1D8 /* HealthRiskAssessmentQuestions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E5F1633B4870097D1D8 /* HealthRiskAssessmentQuestions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		6D402E5116324AB40097D1D8 /* HealthRiskAssessmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthRiskAssessmentViewController.h; path = ../HealthRiskAssessmentViewController.h; sourceTree = "<group>"; };
 		6D402E5216324AB40097D1D8 /* HealthRiskAssessmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthRiskAssessmentViewController.m; path = ../HealthRiskAssessmentViewController.m; sourceTree = "<group>"; };
 		6D402E5316324AB40097D1D8 /* HealthRiskAssessmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HealthRiskAssessmentViewController.xib; path = ../HealthRiskAssessmentViewController.xib; sourceTree = "<group>"; };
+		6D402E5E1633B4870097D1D8 /* HealthRiskAssessmentQuestions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthRiskAssessmentQuestions.h; sourceTree = "<group>"; };
+		6D402E5F1633B4870097D1D8 /* HealthRiskAssessmentQuestions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthRiskAssessmentQuestions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				6D402E5116324AB40097D1D8 /* HealthRiskAssessmentViewController.h */,
 				6D402E5216324AB40097D1D8 /* HealthRiskAssessmentViewController.m */,
 				6D402E5316324AB40097D1D8 /* HealthRiskAssessmentViewController.xib */,
+				6D402E5E1633B4870097D1D8 /* HealthRiskAssessmentQuestions.h */,
+				6D402E5F1633B4870097D1D8 /* HealthRiskAssessmentQuestions.m */,
 				6D1D3EC2162DD98A003F8764 /* FindTestLocationsViewController.h */,
 				6D1D3EC3162DD98A003F8764 /* FindTestLocationsViewController.m */,
 				6D1D3EE8162DDE40003F8764 /* FindTestLocationsViewController.xib */,
@@ -341,6 +346,7 @@
 				6D1D3F1C162DEEB6003F8764 /* SBJsonParser.m in Sources */,
 				6D1D3F1D162DEEB6003F8764 /* SBJsonWriter.m in Sources */,
 				6D402E5416324AB40097D1D8 /* HealthRiskAssessmentViewController.m in Sources */,
+				6D402E601633B4870097D1D8 /* HealthRiskAssessmentQuestions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
