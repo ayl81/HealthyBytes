@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "HealthRiskAssessmentQuestions.h"
 
-@interface HealthRiskAssessmentViewController : UITableViewController
+@interface HealthRiskAssessmentViewController : UITableViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 {
     HealthRiskAssessmentQuestions *healthRiskAssessmentQuestions;
+    UIActionSheet *actionSheet;
+    NSInteger age;
 }
-
-@property (nonatomic, retain) NSArray *colorNames;
+- (void)dismissActionSheet;
 @property (nonatomic, retain) HealthRiskAssessmentQuestions *healthRiskAssessmentQuestion;
+@property (nonatomic, retain) UIActionSheet *actionSheet;
+
 @end

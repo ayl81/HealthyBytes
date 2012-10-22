@@ -10,7 +10,7 @@
 
 @implementation HealthRiskAssessmentViewController
 
-@synthesize healthRiskAssessmentQuestion;
+@synthesize healthRiskAssessmentQuestion, actionSheet;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -214,13 +214,74 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if ((indexPath.section) == 0) {
+        switch (indexPath.row)
+        {
+            case 0:
+            {
+                self.actionSheet = [[UIActionSheet alloc]  initWithTitle:nil
+                                                                delegate:nil
+                                                       cancelButtonTitle:nil
+                                                  destructiveButtonTitle:nil
+                                                       otherButtonTitles:nil];
+                
+                [self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+                
+                CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
+                
+                UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
+                pickerView.showsSelectionIndicator = YES;
+                pickerView.dataSource = self;
+                pickerView.delegate = self;
+                
+                [actionSheet addSubview:pickerView];
+                
+                UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Done"]];
+                closeButton.momentary = YES;
+                closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+                closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+                closeButton.tintColor = [UIColor blackColor];
+                [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
+                [actionSheet addSubview:closeButton];
+                
+                [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+                
+                [actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+            }
+            break;
+        default:
+            break;
+        }
+    }
 }
 
+// tell the picker how many rows are available for a given component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    NSUInteger numRows = 68;
+    
+    return numRows;
+}
+
+// tell the picker how many components it will have
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [NSString stringWithFormat:@"%d", (18 + row)];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+	// If the user chooses a new row, update the label accordingly.
+	age = [pickerView selectedRowInComponent:0] +18;
+    NSLog(@"age: %d", age);
+}
+
+
+- (void)dismissActionSheet:(id)sender
+{
+    if (self.actionSheet && [self.actionSheet isVisible])
+        [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    self.actionSheet = nil;
+}
 @end
