@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "HealthRiskAssessmentQuestions.h"
+#import "AgePickerView.h"
 
-@interface HealthRiskAssessmentViewController : UITableViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface HealthRiskAssessmentViewController : UITableViewController
 {
     HealthRiskAssessmentQuestions *healthRiskAssessmentQuestions;
     UIActionSheet *actionSheet;
+    CGRect pickerFrame;
     NSInteger age;
 }
 - (void)dismissActionSheet;
 @property (nonatomic, retain) HealthRiskAssessmentQuestions *healthRiskAssessmentQuestion;
 @property (nonatomic, retain) UIActionSheet *actionSheet;
-
+@property (nonatomic) CGRect pickerFrame;
 @end
