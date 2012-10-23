@@ -1,16 +1,15 @@
 //
-//  AgePickerView.m
+//  GenderPickerView.m
 //  HealthyBytes
 //
 //  Created by Alda Luong on 10/22/12.
 //  Copyright (c) 2012 Alda Luong. All rights reserved.
 //
 
-#import "AgePickerView.h"
+#import "GenderPickerView.h"
 
-@implementation AgePickerView
-
-@synthesize age;
+@implementation GenderPickerView
+@synthesize gender;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,8 +22,7 @@
 
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSUInteger numRows = 68;
-    
+    NSUInteger numRows = 2;
     return numRows;
 }
 
@@ -34,12 +32,25 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [NSString stringWithFormat:@"%d", (18 + row)];
+    switch (row)
+    {
+        case 0:
+            return @"Male";
+        case 1:
+            return @"Female";
+    }
+    return @"";
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	// If the user chooses a new row, update the label accordingly.
-	self.age = [pickerView selectedRowInComponent:0] + 18;
+    switch (row)
+    {
+        case 0:
+            self.gender = @"Male";
+        case 1:
+            self.gender = @"Female";
+    }
 }
 
 /*

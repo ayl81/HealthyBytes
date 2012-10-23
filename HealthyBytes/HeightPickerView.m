@@ -1,17 +1,15 @@
 //
-//  AgePickerView.m
+//  HeightPickerView.m
 //  HealthyBytes
 //
-//  Created by Alda Luong on 10/22/12.
+//  Created by Alda Luong on 10/23/12.
 //  Copyright (c) 2012 Alda Luong. All rights reserved.
 //
 
-#import "AgePickerView.h"
+#import "HeightPickerView.h"
 
-@implementation AgePickerView
-
-@synthesize age;
-
+@implementation HeightPickerView
+@synthesize height;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -23,7 +21,7 @@
 
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSUInteger numRows = 68;
+    NSUInteger numRows = 100;
     
     return numRows;
 }
@@ -34,12 +32,12 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [NSString stringWithFormat:@"%d", (18 + row)];
+    return [NSString stringWithFormat:@"%d", row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	// If the user chooses a new row, update the label accordingly.
-	self.age = [pickerView selectedRowInComponent:0] + 18;
+	self.height = [pickerView selectedRowInComponent:0];
 }
 
 /*

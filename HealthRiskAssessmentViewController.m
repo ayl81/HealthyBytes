@@ -10,7 +10,7 @@
 
 @implementation HealthRiskAssessmentViewController
 
-@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame;
+@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,25 +32,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
-    self.title = @"Health Risk Assessment";
-    
-    self.actionSheet = [[UIActionSheet alloc]  initWithTitle:nil
-                                                    delegate:nil
-                                           cancelButtonTitle:nil
-                                      destructiveButtonTitle:nil
-                                           otherButtonTitles:nil];
-    
-    [self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-    
-    self.pickerFrame = CGRectMake(0, 40, 0, 0);
-    
-    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Done"]];
-    closeButton.momentary = YES;
-    closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
-    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
-    closeButton.tintColor = [UIColor blackColor];
-    [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
-    [actionSheet addSubview:closeButton];
 }
 
 - (void)viewDidUnload
@@ -81,7 +62,7 @@
     NSInteger rows = 0;
     switch (section) {
         case 0:
-            rows = 4;           // physical 
+            rows = 5;           // physical
             break;
         case 1:
             rows = 3;           // health 
@@ -117,7 +98,11 @@
     
     switch (indexPath.section) {
         case 0:
-            cellText = [self.healthRiskAssessmentQuestion.physicalQuestions objectAtIndex:indexPath.row];  
+            cellText = [self.healthRiskAssessmentQuestion.physicalQuestions objectAtIndex:indexPath.row];
+            if (indexPath.row == 4)
+            {
+                cell.detailTextLabel.text = @"Answer yes if you have smoked any cigarettes in the past month.";
+            }
             break;
         case 1:
             cellText = [self.healthRiskAssessmentQuestion.healthQuestions objectAtIndex:indexPath.row];
@@ -232,35 +217,116 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    self.actionSheet = [[UIActionSheet alloc]  initWithTitle:nil
+                                                    delegate:nil
+                                           cancelButtonTitle:nil
+                                      destructiveButtonTitle:nil
+                                           otherButtonTitles:nil];
+    
+    [self.actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+    
+    self.pickerFrame = CGRectMake(0, 40, 0, 0);
+    
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Done"]];
+    closeButton.momentary = YES;
+    closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    closeButton.tintColor = [UIColor blackColor];
+    
     if ((indexPath.section) == 0) {
         switch (indexPath.row)
         {
             case 0:
             {
-                
-                AgePickerView *pickerView = [[AgePickerView alloc] initWithFrame:self.pickerFrame];
-                pickerView.showsSelectionIndicator = YES;
-                pickerView.dataSource = pickerView;
-                pickerView.delegate = pickerView;
-                
-                [self.actionSheet addSubview:pickerView];
-                
-                [self.actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
-                
-                [self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+                self.agePickerView = [[AgePickerView alloc] initWithFrame:self.pickerFrame];
+                self.agePickerView.showsSelectionIndicator = YES;
+                self.agePickerView.dataSource = self.agePickerView;
+                self.agePickerView.delegate = self.agePickerView;
+                [self.actionSheet addSubview:self.agePickerView];
+                [closeButton addTarget:self action:@selector(dismissAgeActionSheet:) forControlEvents:UIControlEventValueChanged];
             }
             break;
+            case 1:
+            {
+                self.genderPickerView = [[GenderPickerView alloc] initWithFrame:self.pickerFrame];
+                self.genderPickerView.showsSelectionIndicator = YES;
+                self.genderPickerView.dataSource = self.genderPickerView;
+                self.genderPickerView.delegate = self.genderPickerView;
+                [self.actionSheet addSubview:self.genderPickerView];
+                [closeButton addTarget:self action:@selector(dismissGenderActionSheet:) forControlEvents:UIControlEventValueChanged];
+            }
+            break;
+            case 2:
+            {
+                self.heightPickerView = [[HeightPickerView alloc] initWithFrame:self.pickerFrame];
+                self.heightPickerView.showsSelectionIndicator = YES;
+                self.heightPickerView.dataSource = self.heightPickerView;
+                self.heightPickerView.delegate = self.heightPickerView;
+                [self.actionSheet addSubview:self.heightPickerView];
+                [closeButton addTarget:self action:@selector(dismissHeightActionSheet:) forControlEvents:UIControlEventValueChanged];
+            }
+            break;
+            case 3:
+            {
+                self.weightPickerView = [[WeightPickerView alloc] initWithFrame:self.pickerFrame];
+                self.weightPickerView.showsSelectionIndicator = YES;
+                self.weightPickerView.dataSource = self.weightPickerView;
+                self.weightPickerView.delegate = self.weightPickerView;
+                [self.actionSheet addSubview:self.weightPickerView];
+                [closeButton addTarget:self action:@selector(dismissWeightActionSheet:) forControlEvents:UIControlEventValueChanged];
+            }
+            break;
+
         default:
             break;
         }
     }
+    
+    [actionSheet addSubview:closeButton];
+    [self.actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+    
+    [self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
 }
 
 
-- (void)dismissActionSheet:(id)sender
+- (void)dismissAgeActionSheet:(id)sender
 {
     if (self.actionSheet && [self.actionSheet isVisible])
         [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
     self.actionSheet = nil;
+    
+    age = self.agePickerView.age;
+    NSLog(@"Age: %d", self.agePickerView.age);
+}
+
+- (void)dismissGenderActionSheet:(id)sender
+{
+    if (self.actionSheet && [self.actionSheet isVisible])
+        [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    self.actionSheet = nil;
+    
+    gender = self.genderPickerView.gender;
+    NSLog(@"Gender: %@", self.genderPickerView.gender);
+}
+
+- (void)dismissHeightActionSheet:(id)sender
+{
+    if (self.actionSheet && [self.actionSheet isVisible])
+        [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    self.actionSheet = nil;
+    
+    height = self.heightPickerView.height;
+    NSLog(@"Height: %x", self.heightPickerView.height);
+}
+
+- (void)dismissWeightActionSheet:(id)sender
+{
+    if (self.actionSheet && [self.actionSheet isVisible])
+        [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    self.actionSheet = nil;
+    
+    weight = self.weightPickerView.weight;
+    NSLog(@"Weight: %x", self.weightPickerView.weight);
 }
 @end

@@ -35,6 +35,9 @@
 		6D402E5516324AB40097D1D8 /* HealthRiskAssessmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D402E5316324AB40097D1D8 /* HealthRiskAssessmentViewController.xib */; };
 		6D402E601633B4870097D1D8 /* HealthRiskAssessmentQuestions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E5F1633B4870097D1D8 /* HealthRiskAssessmentQuestions.m */; };
 		6D402E7316353E870097D1D8 /* AgePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E7216353E860097D1D8 /* AgePickerView.m */; };
+		6D402E90163659360097D1D8 /* GenderPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E8F163659360097D1D8 /* GenderPickerView.m */; };
+		6D402E9C16368B880097D1D8 /* HeightPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E9B16368B880097D1D8 /* HeightPickerView.m */; };
+		6D402E9F16368BA40097D1D8 /* WeightPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E9E16368BA30097D1D8 /* WeightPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,12 @@
 		6D402E5F1633B4870097D1D8 /* HealthRiskAssessmentQuestions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthRiskAssessmentQuestions.m; sourceTree = "<group>"; };
 		6D402E7116353E860097D1D8 /* AgePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgePickerView.h; sourceTree = "<group>"; };
 		6D402E7216353E860097D1D8 /* AgePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgePickerView.m; sourceTree = "<group>"; };
+		6D402E8E163659360097D1D8 /* GenderPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderPickerView.h; sourceTree = "<group>"; };
+		6D402E8F163659360097D1D8 /* GenderPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderPickerView.m; sourceTree = "<group>"; };
+		6D402E9A16368B880097D1D8 /* HeightPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeightPickerView.h; sourceTree = "<group>"; };
+		6D402E9B16368B880097D1D8 /* HeightPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeightPickerView.m; sourceTree = "<group>"; };
+		6D402E9D16368BA30097D1D8 /* WeightPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightPickerView.h; sourceTree = "<group>"; };
+		6D402E9E16368BA30097D1D8 /* WeightPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +243,12 @@
 			children = (
 				6D402E7116353E860097D1D8 /* AgePickerView.h */,
 				6D402E7216353E860097D1D8 /* AgePickerView.m */,
+				6D402E8E163659360097D1D8 /* GenderPickerView.h */,
+				6D402E8F163659360097D1D8 /* GenderPickerView.m */,
+				6D402E9A16368B880097D1D8 /* HeightPickerView.h */,
+				6D402E9B16368B880097D1D8 /* HeightPickerView.m */,
+				6D402E9D16368BA30097D1D8 /* WeightPickerView.h */,
+				6D402E9E16368BA30097D1D8 /* WeightPickerView.m */,
 			);
 			name = "Picker Views";
 			sourceTree = "<group>";
@@ -361,6 +376,9 @@
 				6D402E5416324AB40097D1D8 /* HealthRiskAssessmentViewController.m in Sources */,
 				6D402E601633B4870097D1D8 /* HealthRiskAssessmentQuestions.m in Sources */,
 				6D402E7316353E870097D1D8 /* AgePickerView.m in Sources */,
+				6D402E90163659360097D1D8 /* GenderPickerView.m in Sources */,
+				6D402E9C16368B880097D1D8 /* HeightPickerView.m in Sources */,
+				6D402E9F16368BA40097D1D8 /* WeightPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
