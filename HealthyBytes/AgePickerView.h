@@ -10,9 +10,9 @@
 
 @interface AgePickerView : UIPickerView <UIPickerViewDelegate, UIPickerViewDataSource>
 {
-    NSInteger age;
+    NSString *age;
 }
 
-@property (nonatomic) NSInteger age;
+@property (nonatomic, retain) NSString *age;
 
 @end

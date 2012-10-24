@@ -22,7 +22,7 @@
 
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 2;
+    return 3;
 }
 
 // tell the picker how many components it will have
@@ -33,11 +33,11 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     switch (row)
     {
-        case 0:
-            return @"Yes";
-            break;
         case 1:
             return @"No";
+            break;
+        case 2:
+            return @"Yes";
             break;
     }
     return @"";
@@ -45,14 +45,15 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	// If the user chooses a new row, update the label accordingly.
+    self.result = @"";
+    
     switch (row)
     {
-            self.result = @"";
-        case 0:
-            self.result = @"Yes";
-            break;
         case 1:
             self.result = @"No";
+            break;
+        case 2:
+            self.result = @"Yes";
             break;
     }
 }

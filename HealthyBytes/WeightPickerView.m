@@ -44,7 +44,8 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	// If the user chooses a new row, update the label accordingly.
-	self.weight = [pickerView selectedRowInComponent:2]+[pickerView selectedRowInComponent:1]*10 + [pickerView selectedRowInComponent:0]*100;
+    NSInteger value = [pickerView selectedRowInComponent:2]+[pickerView selectedRowInComponent:1]*10 + [pickerView selectedRowInComponent:0]*100;
+	self.weight = [NSString stringWithFormat:@"%d", value];
 }
 
 /*

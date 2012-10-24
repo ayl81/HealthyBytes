@@ -10,8 +10,8 @@
 
 @interface WeightPickerView : UIPickerView <UIPickerViewDelegate, UIPickerViewDataSource>
 {
-    NSInteger weight;
+    NSString *weight;
 }
-@property (nonatomic) NSInteger weight;
+@property (nonatomic, retain) NSString *weight;
 
 @end

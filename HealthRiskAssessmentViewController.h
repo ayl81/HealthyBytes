@@ -13,6 +13,8 @@
 #import "HeightPickerView.h"
 #import "WeightPickerView.h"
 #import "YesNoPickerView.h"
+#import "BloodPressurePickerView.h"
+#import "CholesterolPickerView.h"
 
 @interface HealthRiskAssessmentViewController : UITableViewController
 {
@@ -25,21 +27,29 @@
     HeightPickerView *heightPickerView;
     WeightPickerView *weightPickerView;
     YesNoPickerView *smokePickerView;
+    YesNoPickerView *heartAttackPickerView;
+    YesNoPickerView *strokePickerView;
+    YesNoPickerView *diabetesPickerView;
+    BloodPressurePickerView *systolicPickerView;
+    BloodPressurePickerView *diastolicPickerView;
+    CholesterolPickerView *totalPickerView;
+    CholesterolPickerView *hdlPickerView;
+    CholesterolPickerView *ldlPickerView;
     
     // selected data
-    NSInteger age;
+    NSString *age;
     NSString *gender;
-    NSInteger height;
-    NSInteger weight;
+    NSString *height;
+    NSString *weight;
     NSString *smoke;
     NSString *heartAttack;
     NSString *stroke;
     NSString *diabetes;
-    NSInteger systolic;
-    NSInteger diastolic;
-    NSInteger totalCholesterol;
-    NSInteger hdl;
-    NSInteger ldl;
+    NSString *systolic;
+    NSString *diastolic;
+    NSString *totalCholesterol;
+    NSString *hdl;
+    NSString *ldl;
 }
 - (void)dismissAgeActionSheet:(id)sender;
 - (void)dismissGenderActionSheet:(id)sender;
@@ -53,19 +63,27 @@
 @property (nonatomic, retain) HeightPickerView *heightPickerView;
 @property (nonatomic, retain) WeightPickerView *weightPickerView;
 @property (nonatomic, retain) YesNoPickerView *smokePickerView;
+@property (nonatomic, retain) YesNoPickerView *heartAttackPickerView;
+@property (nonatomic, retain) YesNoPickerView *strokePickerView;
+@property (nonatomic, retain) YesNoPickerView *diabetesPickerView;
+@property (nonatomic, retain) BloodPressurePickerView *systolicPickerView;
+@property (nonatomic, retain) BloodPressurePickerView *diastolicPickerView;
+@property (nonatomic, retain) CholesterolPickerView *totalCholesterolPickerView;
+@property (nonatomic, retain) CholesterolPickerView *hdlPickerView;
+@property (nonatomic, retain) CholesterolPickerView *ldlPickerView;
 @property (nonatomic) CGRect pickerFrame;
-@property (nonatomic) NSInteger age;
+@property (nonatomic, retain) NSString *age;
 @property (nonatomic, retain) NSString *gender;
-@property (nonatomic) NSInteger height;
-@property (nonatomic) NSInteger weight;
+@property (nonatomic, retain) NSString *height;
+@property (nonatomic, retain) NSString *weight;
 @property (nonatomic, retain) NSString *smoke;
 @property (nonatomic, retain) NSString *heartAttack;
 @property (nonatomic, retain) NSString *stroke;
 @property (nonatomic, retain) NSString *diabetes;
-@property (nonatomic) NSInteger systolic;
-@property (nonatomic) NSInteger diastolic;
-@property (nonatomic) NSInteger totalCholesterol;
-@property (nonatomic) NSInteger hdl;
-@property (nonatomic) NSInteger ldl;
+@property (nonatomic, retain) NSString *systolic;
+@property (nonatomic, retain) NSString *diastolic;
+@property (nonatomic, retain) NSString *totalCholesterol;
+@property (nonatomic, retain) NSString *hdl;
+@property (nonatomic, retain) NSString *ldl;
 
 @end

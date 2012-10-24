@@ -10,8 +10,8 @@
 
 @interface HeightPickerView : UIPickerView <UIPickerViewDelegate, UIPickerViewDataSource>
 {
-    NSInteger height;
+    NSString *height;
 }
-@property (nonatomic) NSInteger height;
+@property (nonatomic, retain) NSString *height;
 
 @end

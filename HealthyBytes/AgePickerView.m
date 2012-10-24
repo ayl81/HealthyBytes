@@ -23,9 +23,7 @@
 
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSUInteger numRows = 68;
-    
-    return numRows;
+    return 68;
 }
 
 // tell the picker how many components it will have
@@ -39,16 +37,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	// If the user chooses a new row, update the label accordingly.
-	self.age = [pickerView selectedRowInComponent:0] + 18;
+	self.age = [NSString stringWithFormat:@"%d", ([pickerView selectedRowInComponent:0] + 18)];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

@@ -39,6 +39,8 @@
 		6D402E9C16368B880097D1D8 /* HeightPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E9B16368B880097D1D8 /* HeightPickerView.m */; };
 		6D402E9F16368BA40097D1D8 /* WeightPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D402E9E16368BA30097D1D8 /* WeightPickerView.m */; };
 		6DE796441637D4D2004FF988 /* YesNoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE796431637D4D1004FF988 /* YesNoPickerView.m */; };
+		6DE796471637E9E7004FF988 /* BloodPressurePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE796461637E9E7004FF988 /* BloodPressurePickerView.m */; };
+		6DE7964A1637ECB7004FF988 /* CholesterolPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE796491637ECB7004FF988 /* CholesterolPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,10 @@
 		6D402E9E16368BA30097D1D8 /* WeightPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightPickerView.m; sourceTree = "<group>"; };
 		6DE796421637D4D1004FF988 /* YesNoPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesNoPickerView.h; sourceTree = "<group>"; };
 		6DE796431637D4D1004FF988 /* YesNoPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesNoPickerView.m; sourceTree = "<group>"; };
+		6DE796451637E9E7004FF988 /* BloodPressurePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloodPressurePickerView.h; sourceTree = "<group>"; };
+		6DE796461637E9E7004FF988 /* BloodPressurePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodPressurePickerView.m; sourceTree = "<group>"; };
+		6DE796481637ECB7004FF988 /* CholesterolPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CholesterolPickerView.h; sourceTree = "<group>"; };
+		6DE796491637ECB7004FF988 /* CholesterolPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CholesterolPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +260,10 @@
 				6D402E9E16368BA30097D1D8 /* WeightPickerView.m */,
 				6DE796421637D4D1004FF988 /* YesNoPickerView.h */,
 				6DE796431637D4D1004FF988 /* YesNoPickerView.m */,
+				6DE796451637E9E7004FF988 /* BloodPressurePickerView.h */,
+				6DE796461637E9E7004FF988 /* BloodPressurePickerView.m */,
+				6DE796481637ECB7004FF988 /* CholesterolPickerView.h */,
+				6DE796491637ECB7004FF988 /* CholesterolPickerView.m */,
 			);
 			name = "Picker Views";
 			sourceTree = "<group>";
@@ -385,6 +395,8 @@
 				6D402E9C16368B880097D1D8 /* HeightPickerView.m in Sources */,
 				6D402E9F16368BA40097D1D8 /* WeightPickerView.m in Sources */,
 				6DE796441637D4D2004FF988 /* YesNoPickerView.m in Sources */,
+				6DE796471637E9E7004FF988 /* BloodPressurePickerView.m in Sources */,
+				6DE7964A1637ECB7004FF988 /* CholesterolPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
