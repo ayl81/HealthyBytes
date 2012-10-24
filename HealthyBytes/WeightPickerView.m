@@ -22,23 +22,29 @@
 
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSUInteger numRows = 500;
-    
-    return numRows;
+    if (component == 3)
+    {
+        return 1;
+    }    
+    return 10;
 }
 
 // tell the picker how many components it will have
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+    return 4;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    if (component == 3)
+    {
+        return @"lb";
+    }
     return [NSString stringWithFormat:@"%d", row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	// If the user chooses a new row, update the label accordingly.
-	self.weight = [pickerView selectedRowInComponent:0];
+	self.weight = [pickerView selectedRowInComponent:2]+[pickerView selectedRowInComponent:1]*10 + [pickerView selectedRowInComponent:0]*100;
 }
 
 /*

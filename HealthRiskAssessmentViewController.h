@@ -51,4 +51,5 @@
 @property (nonatomic, retain) HeightPickerView *heightPickerView;
 @property (nonatomic, retain) WeightPickerView *weightPickerView;
 @property (nonatomic) CGRect pickerFrame;
+@property (nonatomic) NSInteger age;
 @end

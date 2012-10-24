@@ -21,17 +21,24 @@
 
 // tell the picker how many rows are available for a given component
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSUInteger numRows = 100;
+    if (component == 1)
+    {
+        return 1;
+    }
     
-    return numRows;
+    return 100;
 }
 
 // tell the picker how many components it will have
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+    return 2;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    if (component == 1)
+    {
+        return @"in";
+    }
     return [NSString stringWithFormat:@"%d", row];
 }
 

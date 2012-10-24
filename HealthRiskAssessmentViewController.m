@@ -10,7 +10,7 @@
 
 @implementation HealthRiskAssessmentViewController
 
-@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView;
+@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, age;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -86,7 +86,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell.
@@ -95,10 +95,14 @@
     // Configure the cell...
     NSString *cellText = nil;
     cell.detailTextLabel.text = nil;
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     switch (indexPath.section) {
         case 0:
             cellText = [self.healthRiskAssessmentQuestion.physicalQuestions objectAtIndex:indexPath.row];
+            if (indexPath.row == 0)
+            {
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", self.age];
+            }
             if (indexPath.row == 4)
             {
                 cell.detailTextLabel.text = @"Answer yes if you have smoked any cigarettes in the past month.";
@@ -127,7 +131,7 @@
     titleLabel.text = @"testing";
     [cell.contentView addSubview:titleLabel];*/
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     cell.textLabel.text = cellText;
     return cell;
     
@@ -277,7 +281,10 @@
                 [closeButton addTarget:self action:@selector(dismissWeightActionSheet:) forControlEvents:UIControlEventValueChanged];
             }
             break;
-
+            case 4:
+            {
+            }
+            break;
         default:
             break;
         }
@@ -296,7 +303,7 @@
         [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
     self.actionSheet = nil;
     
-    age = self.agePickerView.age;
+    self.age = self.agePickerView.age;
     NSLog(@"Age: %d", self.agePickerView.age);
 }
 
@@ -317,7 +324,7 @@
     self.actionSheet = nil;
     
     height = self.heightPickerView.height;
-    NSLog(@"Height: %x", self.heightPickerView.height);
+    NSLog(@"Height: %d", self.heightPickerView.height);
 }
 
 - (void)dismissWeightActionSheet:(id)sender
@@ -327,6 +334,6 @@
     self.actionSheet = nil;
     
     weight = self.weightPickerView.weight;
-    NSLog(@"Weight: %x", self.weightPickerView.weight);
+    NSLog(@"Weight: %d", self.weightPickerView.weight);
 }
 @end
