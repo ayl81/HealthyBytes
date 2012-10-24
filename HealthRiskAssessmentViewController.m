@@ -10,7 +10,7 @@
 
 @implementation HealthRiskAssessmentViewController
 
-@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, age;
+@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -85,12 +85,10 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
-    
-    // Configure the cell.
-    //cell.textLabel.text = [self.colorNames objectAtIndex: [indexPath row]];
     
     // Configure the cell...
     NSString *cellText = nil;
@@ -99,15 +97,28 @@
     switch (indexPath.section) {
         case 0:
             cellText = [self.healthRiskAssessmentQuestion.physicalQuestions objectAtIndex:indexPath.row];
-            if (indexPath.row == 0)
+            switch (indexPath.row)
             {
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", self.age];
-            }
-            if (indexPath.row == 4)
-            {
-                cell.detailTextLabel.text = @"Answer yes if you have smoked any cigarettes in the past month.";
+                case 0:
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", self.age];
+                    break;
+                case 1:
+                    cell.detailTextLabel.text = self.gender;
+                    break;
+                case 2:
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d in", self.height];
+                    break;
+                case 3:
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d lbs", self.weight];
+                    break;
+                case 4:
+                    cell.detailTextLabel.text = self.smoke;
+                    break;
+                    
+                    //cell.detailTextLabel.text = @"Answer yes if you have smoked any cigarettes in the past month.";
             }
             break;
+                
         case 1:
             cellText = [self.healthRiskAssessmentQuestion.healthQuestions objectAtIndex:indexPath.row];
             if (indexPath.row == 0)
@@ -124,17 +135,8 @@
         default:
             break;
     }
-    /*
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:cell.contentView.frame] ;
-    titleLabel.numberOfLines = 2;
-    titleLabel.font = [UIFont boldSystemFontOfSize:12];
-    titleLabel.text = @"testing";
-    [cell.contentView addSubview:titleLabel];*/
-    
-
     cell.textLabel.text = cellText;
     return cell;
-    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -178,44 +180,6 @@
     
     return title;
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -283,6 +247,12 @@
             break;
             case 4:
             {
+                self.smokePickerView = [[YesNoPickerView alloc] initWithFrame:self.pickerFrame];
+                self.smokePickerView.showsSelectionIndicator = YES;
+                self.smokePickerView.dataSource = self.smokePickerView;
+                self.smokePickerView.delegate = self.smokePickerView;
+                [self.actionSheet addSubview:self.smokePickerView];
+                [closeButton addTarget:self action:@selector(dismissSmokeActionSheet:) forControlEvents:UIControlEventValueChanged];
             }
             break;
         default:
@@ -305,6 +275,11 @@
     
     self.age = self.agePickerView.age;
     NSLog(@"Age: %d", self.agePickerView.age);
+    
+    NSIndexPath *ageIP = [NSIndexPath indexPathForRow:0 inSection:0];    
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:ageIP, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
 }
 
 - (void)dismissGenderActionSheet:(id)sender
@@ -313,8 +288,13 @@
         [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
     self.actionSheet = nil;
     
-    gender = self.genderPickerView.gender;
+    self.gender = self.genderPickerView.gender;
     NSLog(@"Gender: %@", self.genderPickerView.gender);
+    
+    NSIndexPath *genderIP = [NSIndexPath indexPathForRow:1 inSection:0];
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:genderIP, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
 }
 
 - (void)dismissHeightActionSheet:(id)sender
@@ -323,8 +303,14 @@
         [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
     self.actionSheet = nil;
     
-    height = self.heightPickerView.height;
+    self.height = self.heightPickerView.height;
     NSLog(@"Height: %d", self.heightPickerView.height);
+
+    NSIndexPath *heightIP = [NSIndexPath indexPathForRow:2 inSection:0];
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:heightIP, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+    
 }
 
 - (void)dismissWeightActionSheet:(id)sender
@@ -333,7 +319,29 @@
         [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
     self.actionSheet = nil;
     
-    weight = self.weightPickerView.weight;
+    self.weight = self.weightPickerView.weight;
     NSLog(@"Weight: %d", self.weightPickerView.weight);
+    
+    NSIndexPath *weightIP = [NSIndexPath indexPathForRow:3 inSection:0];
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:weightIP, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+
 }
+
+- (void)dismissSmokeActionSheet:(id)sender
+{
+    if (self.actionSheet && [self.actionSheet isVisible])
+        [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    self.actionSheet = nil;
+    
+    self.smoke = self.smokePickerView.result;
+    NSLog(@"Smoke: %@", self.smokePickerView.result);
+    
+    NSIndexPath *smokeIP = [NSIndexPath indexPathForRow:4 inSection:0];
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:smokeIP, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+}
+
 @end
