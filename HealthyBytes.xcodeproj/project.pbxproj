@@ -43,6 +43,7 @@
 		6DE7964A1637ECB7004FF988 /* CholesterolPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE796491637ECB7004FF988 /* CholesterolPickerView.m */; };
 		6DE7966A163A86E5004FF988 /* SmokeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE79668163A86E5004FF988 /* SmokeInfoViewController.m */; };
 		6DE7966B163A86E5004FF988 /* SmokeInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE79669163A86E5004FF988 /* SmokeInfoViewController.xib */; };
+		6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE79671163C6667004FF988 /* HbA1cPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		6DE79667163A86E5004FF988 /* SmokeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmokeInfoViewController.h; path = ../SmokeInfoViewController.h; sourceTree = "<group>"; };
 		6DE79668163A86E5004FF988 /* SmokeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmokeInfoViewController.m; path = ../SmokeInfoViewController.m; sourceTree = "<group>"; };
 		6DE79669163A86E5004FF988 /* SmokeInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SmokeInfoViewController.xib; path = ../SmokeInfoViewController.xib; sourceTree = "<group>"; };
+		6DE79670163C6667004FF988 /* HbA1cPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HbA1cPickerView.h; sourceTree = "<group>"; };
+		6DE79671163C6667004FF988 /* HbA1cPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HbA1cPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,8 @@
 				6DE796461637E9E7004FF988 /* BloodPressurePickerView.m */,
 				6DE796481637ECB7004FF988 /* CholesterolPickerView.h */,
 				6DE796491637ECB7004FF988 /* CholesterolPickerView.m */,
+				6DE79670163C6667004FF988 /* HbA1cPickerView.h */,
+				6DE79671163C6667004FF988 /* HbA1cPickerView.m */,
 			);
 			name = "Picker Views";
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				6DE796471637E9E7004FF988 /* BloodPressurePickerView.m in Sources */,
 				6DE7964A1637ECB7004FF988 /* CholesterolPickerView.m in Sources */,
 				6DE7966A163A86E5004FF988 /* SmokeInfoViewController.m in Sources */,
+				6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

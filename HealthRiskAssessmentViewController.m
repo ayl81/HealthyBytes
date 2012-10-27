@@ -10,7 +10,7 @@
 
 @implementation HealthRiskAssessmentViewController
 
-@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl, smokeActionSheet, tap, smokeInfoButton, heartAttackInfoButton;
+@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, hbA1cPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl, HbA1c, smokeActionSheet, tap, smokeLabel, heartAttackLabel,diabetesLabel;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,15 +38,27 @@
 	self.tap.cancelsTouchesInView = NO; // So that legit taps on the table bubble up to the tableview
 	[self.view addGestureRecognizer:self.tap];
     
-    self.smokeInfoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
-    [self.smokeInfoButton setFrame:CGRectMake(145, 10, 13, 13)];
-    [self.smokeInfoButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-    [self.smokeInfoButton addTarget:self action:@selector(smokeInfoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    CGRect labelFrame = CGRectMake(210, -10, 60, 60);
     
-    self.heartAttackInfoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
-    [self.heartAttackInfoButton setFrame:CGRectMake(125, 10, 13, 13)];
-    [self.heartAttackInfoButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-    [self.heartAttackInfoButton addTarget:self action:@selector(heartAttackInfoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.smokeLabel = [[UILabel alloc] initWithFrame:labelFrame];
+    self.smokeLabel.textColor = [UIColor blueColor];
+    self.smokeLabel.textAlignment = UITextAlignmentRight;
+    self.smokeLabel.font = [UIFont systemFontOfSize:17.0];
+    self.smokeLabel.adjustsFontSizeToFitWidth = YES;
+    self.smokeLabel.backgroundColor = [UIColor clearColor];
+    
+    self.heartAttackLabel = [[UILabel alloc] initWithFrame:labelFrame];
+    self.heartAttackLabel.textColor = [UIColor blackColor];
+    self.heartAttackLabel.textAlignment = UITextAlignmentRight;
+    self.heartAttackLabel.font = [UIFont systemFontOfSize:17.0];
+    self.heartAttackLabel.adjustsFontSizeToFitWidth = YES;
+    self.heartAttackLabel.backgroundColor = [UIColor clearColor];
+    
+    self.diabetesLabel = [[UILabel alloc] initWithFrame:labelFrame];
+    self.diabetesLabel.textAlignment = UITextAlignmentRight;
+    self.diabetesLabel.font = [UIFont systemFontOfSize:17.0];
+    self.diabetesLabel.adjustsFontSizeToFitWidth = YES;
+    self.diabetesLabel.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidUnload
@@ -83,9 +95,12 @@
             rows = 3;           // health 
             break;
         case 2:
-            rows = 2;           // blood pressure
+            rows = 1;           // diabetes
             break;
         case 3:
+            rows = 2;           // blood pressure
+            break;
+        case 4:
             rows = 3;           // cholestrol
             break;
         default:
@@ -100,6 +115,7 @@
     static NSString *CellIdentifier = @"Cell";
     static NSString *smokeInfoCellIdentifier = @"SmokeInfoCell";
     static NSString *heartAttackInfoCellIdentifier = @"HeartAttackInfoCell";
+    static NSString *diabetesAttackInfoCellIdentifier = @"DiabetesInfoCell";
     
     UITableViewCell *cell;
     
@@ -109,9 +125,9 @@
         
         if (cell == nil)
         {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:smokeInfoCellIdentifier];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:smokeInfoCellIdentifier];
         }
-        [cell.contentView addSubview:self.smokeInfoButton];
+        [cell.contentView addSubview:self.smokeLabel];
     }
     else if ((indexPath.section == 1) && (indexPath.row == 0))
     {
@@ -119,17 +135,29 @@
         
         if (cell == nil)
         {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:heartAttackInfoCellIdentifier];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:heartAttackInfoCellIdentifier];
         }
-        [cell.contentView addSubview:self.heartAttackInfoButton];
+        [cell.contentView addSubview:self.heartAttackLabel];
     }
-    else 
+    else if ((indexPath.section == 1) && (indexPath.row == 2))
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:diabetesAttackInfoCellIdentifier];
+        
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:diabetesAttackInfoCellIdentifier];
+        }
+        [cell.contentView addSubview:self.diabetesLabel];
+    }
+    else
     {
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil)
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
             //NSLog(@"height of cell: %f; width of cell: %f", cell.frame.size.height, cell.frame.size.width);
+            colorOfInfoCells = cell.detailTextLabel.textColor;
+            //NSLog (@"cell text color %@", cell.detailTextLabel.textColor);
         }
     }
 
@@ -175,8 +203,11 @@
                 break;
             case 4:
                 if (self.smoke)
-                    cell.detailTextLabel.text = self.smoke;
-                NSLog(@"creating button");
+                    self.smokeLabel.text = self.smoke;
+                self.smokeLabel.textColor = colorOfInfoCells;
+                cell.detailTextLabel.font = [UIFont systemFontOfSize:11];
+                cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+                cell.detailTextLabel.text = @"Within the past month.";
                 break;
             default:
                 break;
@@ -191,8 +222,11 @@
         switch (indexPath.row)
         {
             case 0:
-                if (self.heartAttack)   //@"Also known as Myocardial Infarction (MI).";
-                    cell.detailTextLabel.text = self.heartAttack;
+                if (self.heartAttack)
+                    self.heartAttackLabel.text = self.heartAttack;
+                self.heartAttackLabel.textColor = colorOfInfoCells;
+                cell.detailTextLabel.font = [UIFont systemFontOfSize:11];
+                cell.detailTextLabel.text = @"Also called a myocardial infarction or MI.";
                 break;
             case 1:
                 if (self.stroke)
@@ -200,15 +234,31 @@
                 break;
             case 2:
                 if (self.diabetes)
-                    cell.detailTextLabel.text = self.diabetes;
+                    self.diabetesLabel.text = self.diabetes;
+                self.diabetesLabel.textColor = colorOfInfoCells;
+                cell.detailTextLabel.font = [UIFont systemFontOfSize:11];
+                cell.detailTextLabel.text = @"Diabetes mellitus type I or type II.";
                 break;
             default:
                 break;
         }
         
     }
-
+    
     if (indexPath.section == 2)
+    {
+        cellText = @"HbA1c";
+        
+        switch (indexPath.row)
+        {
+            case 0:
+                if (self.HbA1c)
+                    cell.detailTextLabel.text = HbA1c;
+                break;
+        }
+    }
+
+    if (indexPath.section == 3)
     {
         cellText = [self.healthRiskAssessmentQuestion.bloodPressureQuestions objectAtIndex:indexPath.row];
         
@@ -228,7 +278,7 @@
     }
     
     
-    if (indexPath.section == 3)
+    if (indexPath.section == 4)
     {
         cellText = [self.healthRiskAssessmentQuestion.cholesterolQuestions objectAtIndex:indexPath.row];
         
@@ -265,9 +315,12 @@
             title = @"Has a doctor ever told you that you had a:";
             break;
         case 2:
-            title = @"Blood Pressure";
+            title = @"Diabetes";
             break;
         case 3:
+            title = @"Blood Pressure";
+            break;
+        case 4:
             title = @"Cholesterol";
             break;
         default:
@@ -285,9 +338,12 @@
         case 1:
             break;
         case 2:
-            title = @"skip this section if you have not been screened in the last year";
+            title = @"skip this section if you do not have diabetes";
             break;
         case 3:
+            title = @"skip this section if you have not been screened in the last year";
+            break;
+        case 4:
             title = @"skip this section if you have not been screened in the last year";
             break;
         default:
@@ -400,7 +456,23 @@
         }
     }
     
+    
     if (indexPath.section == 2)
+    {
+        switch (indexPath.row)
+        {
+            case 0:
+                self.hbA1cPickerView = [[HbA1cPickerView alloc] initWithFrame:self.pickerFrame];
+                self.hbA1cPickerView.showsSelectionIndicator = YES;
+                self.hbA1cPickerView.dataSource = self.hbA1cPickerView;
+                self.hbA1cPickerView.delegate = self.hbA1cPickerView;
+                [self.actionSheet addSubview:self.hbA1cPickerView];
+                [closeButton addTarget:self action:@selector(dismissHbA1cActionSheet:) forControlEvents:UIControlEventValueChanged];
+                break;
+        }
+    }
+    
+    if (indexPath.section == 3)
     {
         switch (indexPath.row)
         {
@@ -638,6 +710,21 @@
     [self.tableView endUpdates];
 }
 
+- (void)dismissHbA1cActionSheet:(id)sender
+{
+    if (self.actionSheet && [self.actionSheet isVisible])
+        [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    self.actionSheet = nil;
+    
+    self.HbA1c = self.hbA1cPickerView.HbA1c;
+    NSLog(@"Systolic: %@", self.hbA1cPickerView.HbA1c);
+    
+    NSIndexPath *hba1cIP = [NSIndexPath indexPathForRow:0 inSection:2];
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:hba1cIP, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+}
+
 - (void)dismissSystolicActionSheet:(id)sender
 {
     if (self.actionSheet && [self.actionSheet isVisible])
@@ -647,7 +734,7 @@
     self.systolic = self.systolicPickerView.bp;
     NSLog(@"Systolic: %@", self.systolicPickerView.bp);
     
-    NSIndexPath *systolicIP = [NSIndexPath indexPathForRow:0 inSection:2];
+    NSIndexPath *systolicIP = [NSIndexPath indexPathForRow:0 inSection:3];
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:systolicIP, nil] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
@@ -662,7 +749,7 @@
     self.diastolic = self.diastolicPickerView.bp;
     NSLog(@"Systolic: %@", self.diastolicPickerView.bp);
     
-    NSIndexPath *diastolicIP = [NSIndexPath indexPathForRow:1 inSection:2];
+    NSIndexPath *diastolicIP = [NSIndexPath indexPathForRow:1 inSection:3];
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:diastolicIP, nil] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
@@ -677,7 +764,7 @@
     self.totalCholesterol = self.totalCholesterolPickerView.cholesterol;
     NSLog(@"Total Cholesterol: %@", self.totalCholesterolPickerView.cholesterol);
     
-    NSIndexPath *totalIP = [NSIndexPath indexPathForRow:0 inSection:3];
+    NSIndexPath *totalIP = [NSIndexPath indexPathForRow:0 inSection:4];
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:totalIP, nil] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
@@ -692,7 +779,7 @@
     self.hdl = self.hdlPickerView.cholesterol;
     NSLog(@"HDL: %@", self.hdlPickerView.cholesterol);
     
-    NSIndexPath *hdlIP = [NSIndexPath indexPathForRow:1 inSection:3];
+    NSIndexPath *hdlIP = [NSIndexPath indexPathForRow:1 inSection:4];
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:hdlIP, nil] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
@@ -707,7 +794,7 @@
     self.ldl = self.ldlPickerView.cholesterol;
     NSLog(@"LDL: %@", self.ldlPickerView.cholesterol);
     
-    NSIndexPath *ldlIP = [NSIndexPath indexPathForRow:2 inSection:3];
+    NSIndexPath *ldlIP = [NSIndexPath indexPathForRow:2 inSection:4];
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:ldlIP, nil] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];

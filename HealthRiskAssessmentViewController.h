@@ -16,6 +16,7 @@
 #import "BloodPressurePickerView.h"
 #import "CholesterolPickerView.h"
 #import "SmokeInfoViewController.h"
+#import "HbA1cPickerView.h"
 
 @interface HealthRiskAssessmentViewController : UITableViewController <UIGestureRecognizerDelegate>
 {
@@ -37,10 +38,12 @@
     CholesterolPickerView *totalPickerView;
     CholesterolPickerView *hdlPickerView;
     CholesterolPickerView *ldlPickerView;
+    HbA1cPickerView *hbA1cPickerView;
     
     UITapGestureRecognizer *tap;
-    UIButton *smokeInfoButton;
-    UIButton *heartAttackInfoButton;
+    UILabel *smokeLabel;
+    UILabel *heartAttackLabel;
+    UILabel *diabetesLabel;
     
     // selected data
     NSString *age;
@@ -56,6 +59,9 @@
     NSString *totalCholesterol;
     NSString *hdl;
     NSString *ldl;
+    NSString *HbA1c;
+    
+    UIColor *colorOfInfoCells;
 }
 - (void)dismissAgeActionSheet:(id)sender;
 - (void)dismissGenderActionSheet:(id)sender;
@@ -78,6 +84,7 @@
 @property (nonatomic, retain) CholesterolPickerView *totalCholesterolPickerView;
 @property (nonatomic, retain) CholesterolPickerView *hdlPickerView;
 @property (nonatomic, retain) CholesterolPickerView *ldlPickerView;
+@property (nonatomic, retain) HbA1cPickerView *hbA1cPickerView;
 @property (nonatomic) CGRect pickerFrame;
 @property (nonatomic, retain) NSString *age;
 @property (nonatomic, retain) NSString *gender;
@@ -92,9 +99,12 @@
 @property (nonatomic, retain) NSString *totalCholesterol;
 @property (nonatomic, retain) NSString *hdl;
 @property (nonatomic, retain) NSString *ldl;
+@property (nonatomic, retain) NSString *HbA1c;
 
 @property (nonatomic, retain) UITapGestureRecognizer *tap;
-@property (nonatomic, retain) UIButton *smokeInfoButton;
-@property (nonatomic, retain) UIButton *heartAttackInfoButton;
+
+@property (nonatomic, retain) UILabel *smokeLabel;
+@property (nonatomic, retain) UILabel *heartAttackLabel;
+@property (nonatomic, retain) UILabel *diabetesLabel;
 
 @end
