@@ -10,7 +10,7 @@
 
 @implementation HealthRiskAssessmentViewController
 
-@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl;
+@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl, smokeActionSheet, tap, smokeInfoButton, heartAttackInfoButton;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +32,21 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
+    
+    // Capture taps outside the bounds of this alert view
+	self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOut:)];
+	self.tap.cancelsTouchesInView = NO; // So that legit taps on the table bubble up to the tableview
+	[self.view addGestureRecognizer:self.tap];
+    
+    self.smokeInfoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    [self.smokeInfoButton setFrame:CGRectMake(145, 10, 13, 13)];
+    [self.smokeInfoButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+    [self.smokeInfoButton addTarget:self action:@selector(smokeInfoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.heartAttackInfoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    [self.heartAttackInfoButton setFrame:CGRectMake(125, 10, 13, 13)];
+    [self.heartAttackInfoButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+    [self.heartAttackInfoButton addTarget:self action:@selector(heartAttackInfoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidUnload
@@ -83,17 +98,60 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *smokeInfoCellIdentifier = @"SmokeInfoCell";
+    static NSString *heartAttackInfoCellIdentifier = @"HeartAttackInfoCell";
     
-    if (cell == nil)
+    UITableViewCell *cell;
+    
+    if ((indexPath.section == 0) && (indexPath.row == 4))
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:smokeInfoCellIdentifier];
+        
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:smokeInfoCellIdentifier];
+        }
+        [cell.contentView addSubview:self.smokeInfoButton];
     }
-    
+    else if ((indexPath.section == 1) && (indexPath.row == 0))
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:heartAttackInfoCellIdentifier];
+        
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:heartAttackInfoCellIdentifier];
+        }
+        [cell.contentView addSubview:self.heartAttackInfoButton];
+    }
+    else 
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+            //NSLog(@"height of cell: %f; width of cell: %f", cell.frame.size.height, cell.frame.size.width);
+        }
+    }
+
     // Configure the cell...
     NSString *cellText = nil;
     cell.detailTextLabel.text = nil;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    /*
+    UIView *mview = cell.contentView;
+    CGRect lFrame = CGRectMake(3, cell.frame.size.height/2, 75, 14);
+    UILabel *label1;
+    label1.adjustsFontSizeToFitWidth = YES;
+    label1 = [[UILabel alloc] initWithFrame:lFrame];
+    label1.textColor = [UIColor blackColor];
+    label1.textAlignment = UITextAlignmentLeft;
+    label1.text =  @"Answer yes if you have smoked any cigarettes in the past month.";
+    label1.backgroundColor = [UIColor clearColor];
+    label1.font = [UIFont systemFontOfSize:12.0];
+    [mview addSubview:label1];
+     */
+    
     if (indexPath.section == 0)
     {
         cellText = [self.healthRiskAssessmentQuestion.physicalQuestions objectAtIndex:indexPath.row];
@@ -118,10 +176,11 @@
             case 4:
                 if (self.smoke)
                     cell.detailTextLabel.text = self.smoke;
+                NSLog(@"creating button");
                 break;
             default:
                 break;
-                //cell.detailTextLabel.text = @"Answer yes if you have smoked any cigarettes in the past month.";
+                
         }
     }
     
@@ -404,6 +463,57 @@
     [self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
 }
 
+
+// For detecting taps outside of the alert view
+-(void)tapOut:(UIGestureRecognizer *)gestureRecognizer {
+	CGPoint p = [gestureRecognizer locationInView:self.smokeActionSheet];
+	if (p.y < 0) { // They tapped outside
+		[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+	}
+}
+
+/*
+- (void)smokeInfoButtonAction:(id)sender
+{
+    self.smokeActionSheet = [[UIActionSheet alloc]  initWithTitle:nil
+                                                    delegate:nil
+                                           cancelButtonTitle:nil
+                                      destructiveButtonTitle:nil
+                                           otherButtonTitles:nil];
+    
+    [self.smokeActionSheet setActionSheetStyle:UIActionSheetStyleDefault];
+    
+    CGRect smokeInfoFrame = CGRectMake(0, 40, 0, 0);
+    UILabel *smokeInfoLabel = [[UILabel alloc] initWithFrame:smokeInfoFrame];
+    smokeInfoLabel.text = @"Answer yes if you have smoked within the last 6 months.";
+    [self.smokeActionSheet addSubview:smokeInfoLabel];
+    [self.smokeActionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+    
+    [self.smokeActionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+    
+    CGPoint p = [self.tap locationInView:self.smokeActionSheet];
+	if (p.y < 0) { // They tapped outside
+		[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+        self.smokeActionSheet = nil;
+	}
+    
+    //if (self.smokeActionSheet && [self.smokeActionSheet isVisible])
+      //  [self.smokeActionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    //self.smokeActionSheet = nil;
+}
+ */
+
+- (void)smokeInfoButtonAction:(id)sender
+{
+    SmokeInfoViewController *smokeInfoViewController = [[SmokeInfoViewController alloc] init];
+    [self.navigationController pushViewController:smokeInfoViewController animated:YES];
+}
+
+- (void)heartAttackInfoButtonAction:(id)sender
+{
+    SmokeInfoViewController *smokeInfoViewController = [[SmokeInfoViewController alloc] init];
+    [self.navigationController pushViewController:smokeInfoViewController animated:YES];
+}
 
 - (void)dismissAgeActionSheet:(id)sender
 {
