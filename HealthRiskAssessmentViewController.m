@@ -33,11 +33,6 @@
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
     
-    // Capture taps outside the bounds of this alert view
-	self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOut:)];
-	self.tap.cancelsTouchesInView = NO; // So that legit taps on the table bubble up to the tableview
-	[self.view addGestureRecognizer:self.tap];
-    
     CGRect labelFrame = CGRectMake(210, -10, 60, 60);
     
     self.smokeLabel = [[UILabel alloc] initWithFrame:labelFrame];
@@ -59,6 +54,33 @@
     self.diabetesLabel.font = [UIFont systemFontOfSize:17.0];
     self.diabetesLabel.adjustsFontSizeToFitWidth = YES;
     self.diabetesLabel.backgroundColor = [UIColor clearColor];
+    
+    
+    // create a UIButton (Deconnect button)
+    UIButton *calculateRisk = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    calculateRisk.frame = CGRectMake(0, 20, 280, 40);
+    [calculateRisk setTitle:@"Calculate Risk" forState:UIControlStateNormal];
+    calculateRisk.backgroundColor = [UIColor clearColor];
+    [calculateRisk setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [calculateRisk addTarget:self action:@selector(calculateRiskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+ /*
+    // create a UIButton (Change pseudo button)
+    UIButton *btnChange = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnChange.frame = CGRectMake(0, 50, 280, 40);
+    [btnChange setTitle:@"Changer Pseudo" forState:UIControlStateNormal];
+    btnChange.backgroundColor = [UIColor clearColor];
+    [btnChange setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [btnChange addTarget:self action:@selector(changePseudo:) forControlEvents:UIControlEventTouchUpInside];
+    */
+    
+    //create a footer view on the bottom of the tabeview
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 280, 100)];
+    [footerView addSubview:calculateRisk];
+  //  [footerView addSubview:btnChange];
+    
+    self.tableView.tableFooterView = footerView;
+    
+    //[[self view] addSubview:self.tableView];
 }
 
 - (void)viewDidUnload
@@ -78,7 +100,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -165,20 +187,6 @@
     NSString *cellText = nil;
     cell.detailTextLabel.text = nil;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    /*
-    UIView *mview = cell.contentView;
-    CGRect lFrame = CGRectMake(3, cell.frame.size.height/2, 75, 14);
-    UILabel *label1;
-    label1.adjustsFontSizeToFitWidth = YES;
-    label1 = [[UILabel alloc] initWithFrame:lFrame];
-    label1.textColor = [UIColor blackColor];
-    label1.textAlignment = UITextAlignmentLeft;
-    label1.text =  @"Answer yes if you have smoked any cigarettes in the past month.";
-    label1.backgroundColor = [UIColor clearColor];
-    label1.font = [UIFont systemFontOfSize:12.0];
-    [mview addSubview:label1];
-     */
     
     if (indexPath.section == 0)
     {
@@ -534,46 +542,6 @@
     
     [self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
 }
-
-
-// For detecting taps outside of the alert view
--(void)tapOut:(UIGestureRecognizer *)gestureRecognizer {
-	CGPoint p = [gestureRecognizer locationInView:self.smokeActionSheet];
-	if (p.y < 0) { // They tapped outside
-		[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-	}
-}
-
-/*
-- (void)smokeInfoButtonAction:(id)sender
-{
-    self.smokeActionSheet = [[UIActionSheet alloc]  initWithTitle:nil
-                                                    delegate:nil
-                                           cancelButtonTitle:nil
-                                      destructiveButtonTitle:nil
-                                           otherButtonTitles:nil];
-    
-    [self.smokeActionSheet setActionSheetStyle:UIActionSheetStyleDefault];
-    
-    CGRect smokeInfoFrame = CGRectMake(0, 40, 0, 0);
-    UILabel *smokeInfoLabel = [[UILabel alloc] initWithFrame:smokeInfoFrame];
-    smokeInfoLabel.text = @"Answer yes if you have smoked within the last 6 months.";
-    [self.smokeActionSheet addSubview:smokeInfoLabel];
-    [self.smokeActionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
-    
-    [self.smokeActionSheet setBounds:CGRectMake(0, 0, 320, 485)];
-    
-    CGPoint p = [self.tap locationInView:self.smokeActionSheet];
-	if (p.y < 0) { // They tapped outside
-		[self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-        self.smokeActionSheet = nil;
-	}
-    
-    //if (self.smokeActionSheet && [self.smokeActionSheet isVisible])
-      //  [self.smokeActionSheet dismissWithClickedButtonIndex:0 animated:YES];
-    //self.smokeActionSheet = nil;
-}
- */
 
 - (void)smokeInfoButtonAction:(id)sender
 {
