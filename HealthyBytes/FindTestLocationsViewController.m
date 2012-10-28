@@ -10,12 +10,13 @@
 
 @implementation FindTestLocationsViewController
 
-@synthesize locationManager, location, searchStringTextField;
+@synthesize locationManager, location, searchStringTextField, mapViewController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.mapViewController = [[MapViewController alloc] init];
 }
 
 - (void)viewDidUnload
@@ -57,10 +58,14 @@
     latFindTestLocations = coordinate.latitude;
     lonFindTestLocations = coordinate.longitude;
 	NSLog (@"longitude is: %f; latitude is: %f", lonFindTestLocations, lonFindTestLocations);
+   
     
+    self.mapViewController.testLocations = [[self sureScriptQuery] valueForKey:@"providers"];
+    [self.navigationController pushViewController:self.mapViewController animated:YES];
+    /*
     MapViewController *mapViewController = [[MapViewController alloc] init];
     mapViewController.testLocations = [[self sureScriptQuery] valueForKey:@"providers"];
-    [self.navigationController pushViewController:mapViewController animated:YES];
+    [self.navigationController pushViewController:mapViewController animated:YES];*/
 }
 
 - (IBAction) findTestLocationsWithCoordinates:(id)sender

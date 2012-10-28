@@ -10,7 +10,7 @@
 
 @implementation HealthRiskAssessmentViewController
 
-@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, hbA1cPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl, HbA1c, smokeActionSheet, tap, smokeLabel, heartAttackLabel,diabetesLabel;
+@synthesize healthRiskAssessmentQuestion, riskResultsViewController, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, hbA1cPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl, HbA1c, smokeActionSheet, tap, smokeLabel, heartAttackLabel,diabetesLabel;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -766,5 +766,35 @@
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:ldlIP, nil] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
+}
+
+- (IBAction)calculateRiskButtonAction:(id)sender
+{
+    [self queryRisks];
+    self.riskResultsViewController = [[RiskResultsViewController alloc] init];
+    [self.navigationController pushViewController:riskResultsViewController animated:YES];
+        
+}
+
+- (void)queryRisks
+{    
+    NSLog(@"age: %@", self.heartAttack);
+    NSString *bodyData = [NSString stringWithFormat:@"age=%d&gender=%c&height=%d&weight=%d&smoker=%@&mi=%@&stroke=%@&diabetes=%@", [self.age integerValue], [self.gender characterAtIndex:0], [self.height integerValue], [self.weight integerValue], self.smoke, self.heartAttack, self.stroke, self.diabetes];
+    NSLog(@"body data: %@", bodyData);
+    
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://demo-indigo4health.archimedesmodel.com/IndiGO4Health/IndiGO4Health"]];
+    
+    // Set the request's content type to application/x-www-form-urlencoded
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    
+    // Designate the request a POST request and specify its body data
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setHTTPBody:[NSData dataWithBytes:[bodyData UTF8String] length:[bodyData length]]];
+    
+    NSError *error;
+    NSURLResponse *response;
+    NSData *urlData=[NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&error];
+    NSString *data=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+    NSLog(data);
 }
 @end

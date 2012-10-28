@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FindTestLocationsViewController.h"
 #import "HealthRiskAssessmentViewController.h"
 #import "HealthRiskAssessmentQuestions.h"
+#import "FindTestLocationsViewController.h"
 
 @class FindTestLocationsViewController;
 

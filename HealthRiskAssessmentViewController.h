@@ -17,11 +17,14 @@
 #import "CholesterolPickerView.h"
 #import "SmokeInfoViewController.h"
 #import "HbA1cPickerView.h"
+#import "RiskResultsViewController.h"
 
 @interface HealthRiskAssessmentViewController : UITableViewController <UIGestureRecognizerDelegate>
 {
     HealthRiskAssessmentQuestions *healthRiskAssessmentQuestions;
+    RiskResultsViewController *riskResultsViewController;
     
+    // picker view stuff
     UIActionSheet *actionSheet;
     UIActionSheet *smokeActionSheet;
     CGRect pickerFrame;
@@ -40,7 +43,7 @@
     CholesterolPickerView *ldlPickerView;
     HbA1cPickerView *hbA1cPickerView;
     
-    UITapGestureRecognizer *tap;
+    // labels for user selection on table (for customized cells)
     UILabel *smokeLabel;
     UILabel *heartAttackLabel;
     UILabel *diabetesLabel;
@@ -68,7 +71,10 @@
 - (void)dismissHeightActionSheet:(id)sender;
 - (void)dismissWeightActionSheet:(id)sender;
 
+- (IBAction)calculateRiskButtonAction:(id)sender;
+
 @property (nonatomic, retain) HealthRiskAssessmentQuestions *healthRiskAssessmentQuestion;
+@property (nonatomic, retain) RiskResultsViewController *riskResultsViewController;
 @property (nonatomic, retain) UIActionSheet *actionSheet;
 @property (nonatomic, retain) UIActionSheet *smokeActionSheet;
 @property (nonatomic, retain) AgePickerView *agePickerView;

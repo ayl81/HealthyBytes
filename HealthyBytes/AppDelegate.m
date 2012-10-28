@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "FindTestLocationsViewController.h"
-
 @implementation AppDelegate
 
 @synthesize navigationController, findTestLocationsViewController, window;
@@ -18,13 +16,16 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController" bundle:nil];
     } else {
         self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController_iPad" bundle:nil];
-    }
-    self.healthRiskAssessmentViewController.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.healthRiskAssessmentViewController];
+    }*/
+
+    self.findTestLocationsViewController = [[FindTestLocationsViewController alloc] initWithNibName:@"FindTestLocationViewController" bundle:nil];
+    /*self.healthRiskAssessmentViewController.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.healthRiskAssessmentViewController];*/
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.findTestLocationsViewController];
     [self.window addSubview:self.navigationController.view];
     
     //self.window.rootViewController = self.findTestLocationsViewController;

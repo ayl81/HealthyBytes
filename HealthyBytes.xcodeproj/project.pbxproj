@@ -44,6 +44,9 @@
 		6DE7966A163A86E5004FF988 /* SmokeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE79668163A86E5004FF988 /* SmokeInfoViewController.m */; };
 		6DE7966B163A86E5004FF988 /* SmokeInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE79669163A86E5004FF988 /* SmokeInfoViewController.xib */; };
 		6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE79671163C6667004FF988 /* HbA1cPickerView.m */; };
+		6DE7967F163DC101004FF988 /* RiskResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7967D163DC101004FF988 /* RiskResultsViewController.m */; };
+		6DE79680163DC101004FF988 /* RiskResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */; };
+		6DE79684163DD66F004FF988 /* RiskAssessment.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE79683163DD66F004FF988 /* RiskAssessment.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,10 @@
 		6DE79669163A86E5004FF988 /* SmokeInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SmokeInfoViewController.xib; path = ../SmokeInfoViewController.xib; sourceTree = "<group>"; };
 		6DE79670163C6667004FF988 /* HbA1cPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HbA1cPickerView.h; sourceTree = "<group>"; };
 		6DE79671163C6667004FF988 /* HbA1cPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HbA1cPickerView.m; sourceTree = "<group>"; };
+		6DE7967C163DC100004FF988 /* RiskResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskResultsViewController.h; sourceTree = "<group>"; };
+		6DE7967D163DC101004FF988 /* RiskResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskResultsViewController.m; sourceTree = "<group>"; };
+		6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskResultsViewController.xib; sourceTree = "<group>"; };
+		6DE79683163DD66F004FF988 /* RiskAssessment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RiskAssessment.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +208,9 @@
 				6DE79667163A86E5004FF988 /* SmokeInfoViewController.h */,
 				6DE79668163A86E5004FF988 /* SmokeInfoViewController.m */,
 				6DE79669163A86E5004FF988 /* SmokeInfoViewController.xib */,
+				6DE7967C163DC100004FF988 /* RiskResultsViewController.h */,
+				6DE7967D163DC101004FF988 /* RiskResultsViewController.m */,
+				6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */,
 				6D1D3EB7162DD98A003F8764 /* Supporting Files */,
 			);
 			path = HealthyBytes;
@@ -209,6 +219,7 @@
 		6D1D3EB7162DD98A003F8764 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6DE79685163DD674004FF988 /* Images */,
 				6D402E7416353E940097D1D8 /* Picker Views */,
 				6D1D3F0A162DEEB6003F8764 /* JSON */,
 				6D1D3EB8162DD98A003F8764 /* HealthyBytes-Info.plist */,
@@ -279,6 +290,14 @@
 				6DE79671163C6667004FF988 /* HbA1cPickerView.m */,
 			);
 			name = "Picker Views";
+			sourceTree = "<group>";
+		};
+		6DE79685163DD674004FF988 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6DE79683163DD66F004FF988 /* RiskAssessment.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +376,8 @@
 				6D1D3EEE162DE221003F8764 /* MapViewController.xib in Resources */,
 				6D402E5516324AB40097D1D8 /* HealthRiskAssessmentViewController.xib in Resources */,
 				6DE7966B163A86E5004FF988 /* SmokeInfoViewController.xib in Resources */,
+				6DE79680163DC101004FF988 /* RiskResultsViewController.xib in Resources */,
+				6DE79684163DD66F004FF988 /* RiskAssessment.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +434,7 @@
 				6DE7964A1637ECB7004FF988 /* CholesterolPickerView.m in Sources */,
 				6DE7966A163A86E5004FF988 /* SmokeInfoViewController.m in Sources */,
 				6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */,
+				6DE7967F163DC101004FF988 /* RiskResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
