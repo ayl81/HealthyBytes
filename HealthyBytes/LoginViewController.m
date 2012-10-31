@@ -1,18 +1,18 @@
 //
-//  SmokeInfoViewController.m
+//  LoginViewController.m
 //  HealthyBytes
 //
-//  Created by Alda Luong on 10/26/12.
+//  Created by Alda Luong on 10/31/12.
 //  Copyright (c) 2012 Alda Luong. All rights reserved.
 //
 
-#import "SmokeInfoViewController.h"
+#import "LoginViewController.h"
 
-@interface SmokeInfoViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation SmokeInfoViewController
+@implementation LoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

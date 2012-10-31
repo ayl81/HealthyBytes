@@ -24,6 +24,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"Risk Assessment";
 }
 
 - (void)viewDidUnload
@@ -38,8 +39,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(IBAction)findTestLocations:(id)sender
+-(IBAction)nextLabel:(id)sender
 {
-    [self.navigationController pushViewController:[[FindTestLocationsViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[RiskResultsViewController2 alloc] init] animated:YES];
 }
+
 @end

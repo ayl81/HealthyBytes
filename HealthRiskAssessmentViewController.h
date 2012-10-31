@@ -15,7 +15,6 @@
 #import "YesNoPickerView.h"
 #import "BloodPressurePickerView.h"
 #import "CholesterolPickerView.h"
-#import "SmokeInfoViewController.h"
 #import "HbA1cPickerView.h"
 #import "RiskResultsViewController.h"
 #import "CreateProfileViewController.h"

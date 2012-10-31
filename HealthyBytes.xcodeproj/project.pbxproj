@@ -41,8 +41,6 @@
 		6DE796441637D4D2004FF988 /* YesNoPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE796431637D4D1004FF988 /* YesNoPickerView.m */; };
 		6DE796471637E9E7004FF988 /* BloodPressurePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE796461637E9E7004FF988 /* BloodPressurePickerView.m */; };
 		6DE7964A1637ECB7004FF988 /* CholesterolPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE796491637ECB7004FF988 /* CholesterolPickerView.m */; };
-		6DE7966A163A86E5004FF988 /* SmokeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE79668163A86E5004FF988 /* SmokeInfoViewController.m */; };
-		6DE7966B163A86E5004FF988 /* SmokeInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE79669163A86E5004FF988 /* SmokeInfoViewController.xib */; };
 		6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE79671163C6667004FF988 /* HbA1cPickerView.m */; };
 		6DE7967F163DC101004FF988 /* RiskResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7967D163DC101004FF988 /* RiskResultsViewController.m */; };
 		6DE79680163DC101004FF988 /* RiskResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */; };
@@ -55,6 +53,10 @@
 		6DEF9497164121B2006769AD /* ConnectWithFacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF9496164121B2006769AD /* ConnectWithFacebook.png */; };
 		6DEF949B164125EB006769AD /* RiskResultsViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF9499164125EB006769AD /* RiskResultsViewController2.m */; };
 		6DEF949C164125EB006769AD /* RiskResultsViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF949A164125EB006769AD /* RiskResultsViewController2.xib */; };
+		6DEF949E16412AB1006769AD /* RiskAssessment2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF949D16412AB1006769AD /* RiskAssessment2.png */; };
+		6DEF94A016412D91006769AD /* stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF949F16412D90006769AD /* stats.png */; };
+		6DEF94A416412F14006769AD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF94A216412F13006769AD /* LoginViewController.m */; };
+		6DEF94A516412F14006769AD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF94A316412F14006769AD /* LoginViewController.xib */; };
 		6DF9887E163E1F1000021D26 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9887C163E1F0F00021D26 /* WelcomeViewController.m */; };
 		6DF9887F163E1F1000021D26 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9887D163E1F0F00021D26 /* WelcomeViewController.xib */; };
 		6DF98890163F94DB00021D26 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9888F163F94DB00021D26 /* AddressBook.framework */; };
@@ -130,9 +132,6 @@
 		6DE796461637E9E7004FF988 /* BloodPressurePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloodPressurePickerView.m; sourceTree = "<group>"; };
 		6DE796481637ECB7004FF988 /* CholesterolPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CholesterolPickerView.h; sourceTree = "<group>"; };
 		6DE796491637ECB7004FF988 /* CholesterolPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CholesterolPickerView.m; sourceTree = "<group>"; };
-		6DE79667163A86E5004FF988 /* SmokeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmokeInfoViewController.h; path = ../SmokeInfoViewController.h; sourceTree = "<group>"; };
-		6DE79668163A86E5004FF988 /* SmokeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmokeInfoViewController.m; path = ../SmokeInfoViewController.m; sourceTree = "<group>"; };
-		6DE79669163A86E5004FF988 /* SmokeInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SmokeInfoViewController.xib; path = ../SmokeInfoViewController.xib; sourceTree = "<group>"; };
 		6DE79670163C6667004FF988 /* HbA1cPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HbA1cPickerView.h; sourceTree = "<group>"; };
 		6DE79671163C6667004FF988 /* HbA1cPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HbA1cPickerView.m; sourceTree = "<group>"; };
 		6DE7967C163DC100004FF988 /* RiskResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskResultsViewController.h; sourceTree = "<group>"; };
@@ -150,6 +149,11 @@
 		6DEF9498164125EA006769AD /* RiskResultsViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskResultsViewController2.h; sourceTree = "<group>"; };
 		6DEF9499164125EB006769AD /* RiskResultsViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskResultsViewController2.m; sourceTree = "<group>"; };
 		6DEF949A164125EB006769AD /* RiskResultsViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskResultsViewController2.xib; sourceTree = "<group>"; };
+		6DEF949D16412AB1006769AD /* RiskAssessment2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RiskAssessment2.png; sourceTree = "<group>"; };
+		6DEF949F16412D90006769AD /* stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stats.png; sourceTree = "<group>"; };
+		6DEF94A116412F13006769AD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6DEF94A216412F13006769AD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		6DEF94A316412F14006769AD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		6DF9887B163E1F0F00021D26 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		6DF9887C163E1F0F00021D26 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		6DF9887D163E1F0F00021D26 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -240,9 +244,6 @@
 				6D1D3EEC162DE221003F8764 /* MapViewController.xib */,
 				6D1D3EEF162DE487003F8764 /* TestLocationAnnotation.h */,
 				6D1D3EF0162DE487003F8764 /* TestLocationAnnotation.m */,
-				6DE79667163A86E5004FF988 /* SmokeInfoViewController.h */,
-				6DE79668163A86E5004FF988 /* SmokeInfoViewController.m */,
-				6DE79669163A86E5004FF988 /* SmokeInfoViewController.xib */,
 				6DE7967C163DC100004FF988 /* RiskResultsViewController.h */,
 				6DE7967D163DC101004FF988 /* RiskResultsViewController.m */,
 				6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */,
@@ -255,6 +256,9 @@
 				6DEF947D1641163B006769AD /* ProfileViewController.h */,
 				6DEF947E1641163B006769AD /* ProfileViewController.m */,
 				6DEF947F1641163B006769AD /* ProfileViewController.xib */,
+				6DEF94A116412F13006769AD /* LoginViewController.h */,
+				6DEF94A216412F13006769AD /* LoginViewController.m */,
+				6DEF94A316412F14006769AD /* LoginViewController.xib */,
 				6D1D3EB7162DD98A003F8764 /* Supporting Files */,
 			);
 			path = HealthyBytes;
@@ -339,9 +343,11 @@
 		6DE79685163DD674004FF988 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6DEF949F16412D90006769AD /* stats.png */,
 				6DEF948716411707006769AD /* HealthRiskAssessment.png */,
 				6DEF947A16410D68006769AD /* WelcomeHeart.png */,
 				6DEF9496164121B2006769AD /* ConnectWithFacebook.png */,
+				6DEF949D16412AB1006769AD /* RiskAssessment2.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -421,7 +427,6 @@
 				6D1D3EE9162DDE40003F8764 /* FindTestLocationsViewController.xib in Resources */,
 				6D1D3EEE162DE221003F8764 /* MapViewController.xib in Resources */,
 				6D402E5516324AB40097D1D8 /* HealthRiskAssessmentViewController.xib in Resources */,
-				6DE7966B163A86E5004FF988 /* SmokeInfoViewController.xib in Resources */,
 				6DE79680163DC101004FF988 /* RiskResultsViewController.xib in Resources */,
 				6DF9887F163E1F1000021D26 /* WelcomeViewController.xib in Resources */,
 				6DEF947B16410D68006769AD /* WelcomeHeart.png in Resources */,
@@ -430,6 +435,9 @@
 				6DEF948816411707006769AD /* HealthRiskAssessment.png in Resources */,
 				6DEF9497164121B2006769AD /* ConnectWithFacebook.png in Resources */,
 				6DEF949C164125EB006769AD /* RiskResultsViewController2.xib in Resources */,
+				6DEF949E16412AB1006769AD /* RiskAssessment2.png in Resources */,
+				6DEF94A016412D91006769AD /* stats.png in Resources */,
+				6DEF94A516412F14006769AD /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,13 +492,13 @@
 				6DE796441637D4D2004FF988 /* YesNoPickerView.m in Sources */,
 				6DE796471637E9E7004FF988 /* BloodPressurePickerView.m in Sources */,
 				6DE7964A1637ECB7004FF988 /* CholesterolPickerView.m in Sources */,
-				6DE7966A163A86E5004FF988 /* SmokeInfoViewController.m in Sources */,
 				6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */,
 				6DE7967F163DC101004FF988 /* RiskResultsViewController.m in Sources */,
 				6DF9887E163E1F1000021D26 /* WelcomeViewController.m in Sources */,
 				6DEF94801641163B006769AD /* ProfileViewController.m in Sources */,
 				6DEF948516411698006769AD /* CreateProfileViewController.m in Sources */,
 				6DEF949B164125EB006769AD /* RiskResultsViewController2.m in Sources */,
+				6DEF94A416412F14006769AD /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

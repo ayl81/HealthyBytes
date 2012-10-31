@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FindTestLocationsViewController.h"
 
 @interface RiskResultsViewController2 : UIViewController
+
+-(IBAction)findTestLocations:(id)sender;
 
 @end

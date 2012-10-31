@@ -549,18 +549,6 @@
     [self.actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
 }
 
-- (void)smokeInfoButtonAction:(id)sender
-{
-    SmokeInfoViewController *smokeInfoViewController = [[SmokeInfoViewController alloc] init];
-    [self.navigationController pushViewController:smokeInfoViewController animated:YES];
-}
-
-- (void)heartAttackInfoButtonAction:(id)sender
-{
-    SmokeInfoViewController *smokeInfoViewController = [[SmokeInfoViewController alloc] init];
-    [self.navigationController pushViewController:smokeInfoViewController animated:YES];
-}
-
 - (void)dismissAgeActionSheet:(id)sender
 {
     if (self.actionSheet && [self.actionSheet isVisible])

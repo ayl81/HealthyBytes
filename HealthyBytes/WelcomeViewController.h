@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HealthRiskAssessmentViewController.h"
+#import "ProfileViewController.h"
+#import "LoginViewController.h"
 
 @interface WelcomeViewController : UIViewController
 {
@@ -17,5 +19,6 @@
 @property (nonatomic, retain) HealthRiskAssessmentViewController *healthRiskAssessmentViewController;
 
 -(IBAction)start:(id)sender;
+-(IBAction)loginButtonAction:(id)sender;
 
 @end

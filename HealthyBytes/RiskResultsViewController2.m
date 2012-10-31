@@ -41,4 +41,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction)findTestLocations:(id)sender
+{
+    [self.navigationController pushViewController:[[FindTestLocationsViewController alloc] init] animated:YES];
+}
+
 @end

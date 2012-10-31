@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"Profile";
 }
 
 - (void)viewDidUnload
@@ -40,5 +41,6 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 @end

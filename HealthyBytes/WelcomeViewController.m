@@ -49,4 +49,10 @@
     [self.navigationController pushViewController:self.healthRiskAssessmentViewController animated:YES];
 }
 
+-(IBAction)loginButtonAction:(id)sender
+{
+    LoginViewController *lvc = [[LoginViewController alloc] init];
+    [self.navigationController pushViewController:lvc animated:YES];
+}
+
 @end
