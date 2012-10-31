@@ -47,6 +47,10 @@
 		6DE7967F163DC101004FF988 /* RiskResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7967D163DC101004FF988 /* RiskResultsViewController.m */; };
 		6DE79680163DC101004FF988 /* RiskResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */; };
 		6DE79684163DD66F004FF988 /* RiskAssessment.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE79683163DD66F004FF988 /* RiskAssessment.png */; };
+		6DF9887E163E1F1000021D26 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9887C163E1F0F00021D26 /* WelcomeViewController.m */; };
+		6DF9887F163E1F1000021D26 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9887D163E1F0F00021D26 /* WelcomeViewController.xib */; };
+		6DF98890163F94DB00021D26 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9888F163F94DB00021D26 /* AddressBook.framework */; };
+		6DF98892163F94E100021D26 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF98891163F94E100021D26 /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +131,11 @@
 		6DE7967D163DC101004FF988 /* RiskResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskResultsViewController.m; sourceTree = "<group>"; };
 		6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskResultsViewController.xib; sourceTree = "<group>"; };
 		6DE79683163DD66F004FF988 /* RiskAssessment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RiskAssessment.png; sourceTree = "<group>"; };
+		6DF9887B163E1F0F00021D26 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		6DF9887C163E1F0F00021D26 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		6DF9887D163E1F0F00021D26 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		6DF9888F163F94DB00021D26 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		6DF98891163F94E100021D26 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF98892163F94E100021D26 /* AddressBookUI.framework in Frameworks */,
+				6DF98890163F94DB00021D26 /* AddressBook.framework in Frameworks */,
 				6D1D3EF5162DEDEA003F8764 /* MapKit.framework in Frameworks */,
 				6D1D3EF3162DEDDD003F8764 /* CoreLocation.framework in Frameworks */,
 				6D1D3EB1162DD98A003F8764 /* UIKit.framework in Frameworks */,
@@ -158,6 +169,8 @@
 		6D1D3EA1162DD98A003F8764 = {
 			isa = PBXGroup;
 			children = (
+				6DF98891163F94E100021D26 /* AddressBookUI.framework */,
+				6DF9888F163F94DB00021D26 /* AddressBook.framework */,
 				6D1D3EB6162DD98A003F8764 /* HealthyBytes */,
 				6D1D3ED7162DD98A003F8764 /* HealthyBytesTests */,
 				6D1D3EAF162DD98A003F8764 /* Frameworks */,
@@ -192,6 +205,9 @@
 			children = (
 				6D1D3EBF162DD98A003F8764 /* AppDelegate.h */,
 				6D1D3EC0162DD98A003F8764 /* AppDelegate.m */,
+				6DF9887B163E1F0F00021D26 /* WelcomeViewController.h */,
+				6DF9887C163E1F0F00021D26 /* WelcomeViewController.m */,
+				6DF9887D163E1F0F00021D26 /* WelcomeViewController.xib */,
 				6D402E5116324AB40097D1D8 /* HealthRiskAssessmentViewController.h */,
 				6D402E5216324AB40097D1D8 /* HealthRiskAssessmentViewController.m */,
 				6D402E5316324AB40097D1D8 /* HealthRiskAssessmentViewController.xib */,
@@ -378,6 +394,7 @@
 				6DE7966B163A86E5004FF988 /* SmokeInfoViewController.xib in Resources */,
 				6DE79680163DC101004FF988 /* RiskResultsViewController.xib in Resources */,
 				6DE79684163DD66F004FF988 /* RiskAssessment.png in Resources */,
+				6DF9887F163E1F1000021D26 /* WelcomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +452,7 @@
 				6DE7966A163A86E5004FF988 /* SmokeInfoViewController.m in Sources */,
 				6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */,
 				6DE7967F163DC101004FF988 /* RiskResultsViewController.m in Sources */,
+				6DF9887E163E1F1000021D26 /* WelcomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

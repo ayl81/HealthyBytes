@@ -12,6 +12,16 @@
 
 @synthesize healthRiskAssessmentQuestion, riskResultsViewController, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, hbA1cPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl, HbA1c, smokeActionSheet, tap, smokeLabel, heartAttackLabel,diabetesLabel;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    NSLog(@"nib name: %@", nibNameOrNil);
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -63,6 +73,7 @@
     calculateRisk.backgroundColor = [UIColor clearColor];
     [calculateRisk setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [calculateRisk addTarget:self action:@selector(calculateRiskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    calculateRisk.tintColor = [UIColor blueColor];
  /*
     // create a UIButton (Change pseudo button)
     UIButton *btnChange = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -771,7 +782,7 @@
 - (IBAction)calculateRiskButtonAction:(id)sender
 {
     [self queryRisks];
-    self.riskResultsViewController = [[RiskResultsViewController alloc] init];
+    self.riskResultsViewController = [[RiskResultsViewController alloc] initWithNibName:@"RiskResultsViewController" bundle:nil];
     [self.navigationController pushViewController:riskResultsViewController animated:YES];
         
 }

@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "TestLocationAnnotation.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface MapViewController : UIViewController
+
+@interface MapViewController : UIViewController <MKMapViewDelegate, ABPersonViewControllerDelegate>
 {
     MKMapView *mapView;
     NSArray *testLocations;
     NSString *locationName;
 }
+
+- (void)showDetails:(id)sender;
 
 @property (nonatomic, retain) NSArray *testLocations;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;

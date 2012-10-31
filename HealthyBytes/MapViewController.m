@@ -52,7 +52,12 @@
         self.locationName = [testLocation objectForKey:@"name"];
         testLocationAnnotation.testLocationName = self.locationName;
         
-        NSLog(@"test location lon: %f; lat: %f; name: %@", testLocationCoordinate.longitude, testLocationCoordinate.latitude, testLocationAnnotation.testLocationName);
+        testLocationAnnotation.phone = [testLocation objectForKey:@"phone"];
+        testLocationAnnotation.address1 = [testLocation objectForKey:@"address1"];
+        testLocationAnnotation.address2 = [testLocation objectForKey:@"address2"];
+        testLocationAnnotation.city = [testLocation objectForKey:@"city"];
+        testLocationAnnotation.zipcode = [testLocation objectForKey:@"zip"];
+        testLocationAnnotation.website = [testLocation objectForKey:@"url"];
         
         [self.mapView addAnnotation:testLocationAnnotation];
     }
@@ -80,7 +85,7 @@
         return nil;
     
     // try to dequeue an existing pin view first
-    static NSString* testLocationAnnotationIdentifier = @"testLocationAnnotationIdentifier";
+    NSString* testLocationAnnotationIdentifier = [NSString stringWithFormat:@"%@", self.locationName];
     MKPinAnnotationView* pinView = (MKPinAnnotationView *)
     [mapView dequeueReusableAnnotationViewWithIdentifier:testLocationAnnotationIdentifier];
     if (!pinView)
@@ -95,13 +100,71 @@
         // add a detail disclosure button to the callout which will open a new view controller page
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [rightButton addTarget:self
-                        action:@selector(showDetails:)
+                        action:@selector(showDetails)
               forControlEvents:UIControlEventTouchUpInside];
         customPinView.rightCalloutAccessoryView = rightButton;
-        
         return customPinView;
     }
     return nil;
 }
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    TestLocationAnnotation *tla = (TestLocationAnnotation *) view.annotation;
+    NSLog(@"title of annotation: %@", tla.title);
+    NSLog(@"phone of annotation: %@", tla.phone);
+    NSLog(@"address 1 of annotation: %@", tla.address1);
+    NSLog(@"address 2 of annotation: %@", tla.address2);
+    NSLog(@"city of annotation: %@", tla.city);
+    NSLog(@"state of annotation: %@", tla.state);
+    NSLog(@"zip code of annotation: %@", tla.zipcode);
+    NSLog(@"website of annotation: %@", tla.website);
+	
+    ABPersonViewController *personController = [[ABPersonViewController alloc] init];
+    personController.displayedPerson = (ABRecordRef)[self buildContact:tla];
+    personController.allowsActions = YES;
+    personController.allowsEditing = NO;
+    [self.navigationController pushViewController:personController animated:YES];
+}
+
+-(ABRecordRef)buildContact:(TestLocationAnnotation *)tla
+{
+    ABRecordRef person = ABPersonCreate();
+    CFErrorRef  error = NULL;
+    
+    // name of contact
+    if (tla.testLocationName)
+        ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)(tla.testLocationName), NULL);
+    
+    // phone
+    /*if (tla.phone)
+        ABRecordSetValue(person, kABPersonPhoneMainLabel, @"(555) 555-1234", NULL);*/
+   
+    // address
+    ABMutableMultiValueRef address = ABMultiValueCreateMutable(kABMultiDictionaryPropertyType);
+    NSMutableDictionary *addressDict = [[NSMutableDictionary alloc] init];
+    if (tla.address1)
+        [addressDict setObject:[NSString stringWithFormat:@"%@", tla.address1] forKey:(NSString *)kABPersonAddressStreetKey];
+    if (tla.city)
+        [addressDict setObject:[NSString stringWithFormat:@"%@", tla.city] forKey:(NSString *)kABPersonAddressCityKey];
+    if (tla.state)
+        [addressDict setObject:[NSString stringWithFormat:@"%@", tla.state] forKey:(NSString *)kABPersonAddressStateKey];
+    if (tla.zipcode)
+        [addressDict setObject:[NSString stringWithFormat:@"%@", tla.zipcode] forKey:(NSString *)kABPersonAddressZIPKey];
+    
+    ABMultiValueAddValueAndLabel(address, CFBridgingRetain(addressDict), kABWorkLabel, NULL);
+    ABRecordSetValue(person, kABPersonAddressProperty, address, &error);
+    
+    // URL
+    /*(if (tla.website)
+        ABRecordSetValue(person, kABPersonURLProperty, (__bridge CFTypeRef)(tla.website), NULL);*/
+    
+    return person;
+}
+
+- (void)showDetails
+{
+}
+
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation AppDelegate
 
-@synthesize navigationController, findTestLocationsViewController, window;
+@synthesize navigationController, welcomeViewController, window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -22,13 +22,14 @@
         self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController_iPad" bundle:nil];
     }*/
 
-    self.findTestLocationsViewController = [[FindTestLocationsViewController alloc] initWithNibName:@"FindTestLocationViewController" bundle:nil];
-    /*self.healthRiskAssessmentViewController.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.healthRiskAssessmentViewController];*/
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.findTestLocationsViewController];
+    self.welcomeViewController = [[WelcomeViewController alloc] initWithNibName:@"WelcomeViewController" bundle:nil];
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.welcomeViewController];
+   // self.healthRiskAssessmentViewController.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
+    //self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.healthRiskAssessmentViewController];
     [self.window addSubview:self.navigationController.view];
     
-    //self.window.rootViewController = self.findTestLocationsViewController;
+    self.window.rootViewController = self.welcomeViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

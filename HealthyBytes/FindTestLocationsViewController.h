@@ -21,7 +21,6 @@
     double latFindTestLocations;
     NSArray *testLocations;
     IBOutlet UITextField *searchStringTextField;
-    MapViewController *mapViewController;
 }
 
 - (IBAction) findTestLocationsWithCurrentLocation:(id)sender;
@@ -32,7 +31,6 @@
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, strong) IBOutlet UITextField *searchStringTextField;
-@property (nonatomic, retain) MapViewController *mapViewController;
  
 
 @end

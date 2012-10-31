@@ -11,7 +11,7 @@
 
 @implementation TestLocationAnnotation
 
-@synthesize testLocationName, coordinateOfTestLocation;
+@synthesize testLocationName, coordinateOfTestLocation, phone, address1, address2, city, state, zipcode, website;
 
 - (CLLocationCoordinate2D)coordinate;
 {
