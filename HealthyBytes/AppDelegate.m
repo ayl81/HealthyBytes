@@ -15,18 +15,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController" bundle:nil];
-    } else {
-        self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController_iPad" bundle:nil];
-    }*/
-
     self.welcomeViewController = [[WelcomeViewController alloc] initWithNibName:@"WelcomeViewController" bundle:nil];
-    
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.welcomeViewController];
-   // self.healthRiskAssessmentViewController.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
-    //self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.healthRiskAssessmentViewController];
     [self.window addSubview:self.navigationController.view];
     
     self.window.rootViewController = self.welcomeViewController;

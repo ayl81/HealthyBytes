@@ -18,8 +18,9 @@
 #import "SmokeInfoViewController.h"
 #import "HbA1cPickerView.h"
 #import "RiskResultsViewController.h"
+#import "CreateProfileViewController.h"
 
-@interface HealthRiskAssessmentViewController : UITableViewController <UIGestureRecognizerDelegate>
+@interface HealthRiskAssessmentViewController : UITableViewController <UIGestureRecognizerDelegate, UIAlertViewDelegate>
 {
     HealthRiskAssessmentQuestions *healthRiskAssessmentQuestions;
     RiskResultsViewController *riskResultsViewController;

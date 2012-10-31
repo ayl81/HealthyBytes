@@ -1,18 +1,18 @@
 //
-//  WelcomeViewController.m
+//  CreateProfileViewController.m
 //  HealthyBytes
 //
-//  Created by Alda Luong on 10/28/12.
+//  Created by Alda Luong on 10/31/12.
 //  Copyright (c) 2012 Alda Luong. All rights reserved.
 //
 
-#import "WelcomeViewController.h"
+#import "CreateProfileViewController.h"
 
+@interface CreateProfileViewController ()
 
+@end
 
-@implementation WelcomeViewController
-
-@synthesize healthRiskAssessmentViewController;
+@implementation CreateProfileViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Welcome";
+    self.navigationItem.title = @"Profile";
 }
 
 - (void)viewDidUnload
@@ -42,11 +42,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(IBAction)start:(id)sender
+-(IBAction)createProfileButton:(id)sender
 {
-    self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController" bundle:nil];
-    self.healthRiskAssessmentViewController.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
-    [self.navigationController pushViewController:self.healthRiskAssessmentViewController animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

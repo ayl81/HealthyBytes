@@ -25,7 +25,6 @@
 {
     [super viewDidLoad];
     
-    //mapViewController.title = [@"Test Centers Near " stringByAppendingString:userInputLocationPlacemark.locality];
     UILabel* tlabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0, 300, 40)];
     tlabel.text = [@"Test centers near " stringByAppendingString:self.locationName]; 
     tlabel.textColor = [UIColor whiteColor];

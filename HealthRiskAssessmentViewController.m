@@ -16,7 +16,11 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        //initialize default values
+        self.smoke = @"No";
+        self.heartAttack = @"No";
+        self.stroke = @"No";
+        self.diabetes = @"No";
     }
     NSLog(@"nib name: %@", nibNameOrNil);
     return self;
@@ -39,7 +43,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
     
@@ -74,24 +78,15 @@
     [calculateRisk setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [calculateRisk addTarget:self action:@selector(calculateRiskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     calculateRisk.tintColor = [UIColor blueColor];
- /*
-    // create a UIButton (Change pseudo button)
-    UIButton *btnChange = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnChange.frame = CGRectMake(0, 50, 280, 40);
-    [btnChange setTitle:@"Changer Pseudo" forState:UIControlStateNormal];
-    btnChange.backgroundColor = [UIColor clearColor];
-    [btnChange setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [btnChange addTarget:self action:@selector(changePseudo:) forControlEvents:UIControlEventTouchUpInside];
-    */
     
     //create a footer view on the bottom of the tabeview
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 280, 100)];
     [footerView addSubview:calculateRisk];
-  //  [footerView addSubview:btnChange];
     
     self.tableView.tableFooterView = footerView;
     
-    //[[self view] addSubview:self.tableView];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to create a profile to save your data?" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"OK!", nil];
+    [alert show];
 }
 
 - (void)viewDidUnload
@@ -807,5 +802,17 @@
     NSData *urlData=[NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&error];
     NSString *data=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
     NSLog(data);
+}
+
+// UIAlertView Delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"Button Pressed: %d", buttonIndex);
+    if (buttonIndex == 1)
+    {
+        // OK button clicked
+        CreateProfileViewController *cpvc = [[CreateProfileViewController alloc] init];
+        [self.navigationController pushViewController:cpvc animated:YES];
+    }
 }
 @end

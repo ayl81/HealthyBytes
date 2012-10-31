@@ -46,7 +46,15 @@
 		6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE79671163C6667004FF988 /* HbA1cPickerView.m */; };
 		6DE7967F163DC101004FF988 /* RiskResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE7967D163DC101004FF988 /* RiskResultsViewController.m */; };
 		6DE79680163DC101004FF988 /* RiskResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */; };
-		6DE79684163DD66F004FF988 /* RiskAssessment.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DE79683163DD66F004FF988 /* RiskAssessment.png */; };
+		6DEF947B16410D68006769AD /* WelcomeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF947A16410D68006769AD /* WelcomeHeart.png */; };
+		6DEF94801641163B006769AD /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF947E1641163B006769AD /* ProfileViewController.m */; };
+		6DEF94811641163B006769AD /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF947F1641163B006769AD /* ProfileViewController.xib */; };
+		6DEF948516411698006769AD /* CreateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF948316411698006769AD /* CreateProfileViewController.m */; };
+		6DEF948616411698006769AD /* CreateProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF948416411698006769AD /* CreateProfileViewController.xib */; };
+		6DEF948816411707006769AD /* HealthRiskAssessment.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF948716411707006769AD /* HealthRiskAssessment.png */; };
+		6DEF9497164121B2006769AD /* ConnectWithFacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF9496164121B2006769AD /* ConnectWithFacebook.png */; };
+		6DEF949B164125EB006769AD /* RiskResultsViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF9499164125EB006769AD /* RiskResultsViewController2.m */; };
+		6DEF949C164125EB006769AD /* RiskResultsViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF949A164125EB006769AD /* RiskResultsViewController2.xib */; };
 		6DF9887E163E1F1000021D26 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9887C163E1F0F00021D26 /* WelcomeViewController.m */; };
 		6DF9887F163E1F1000021D26 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9887D163E1F0F00021D26 /* WelcomeViewController.xib */; };
 		6DF98890163F94DB00021D26 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9888F163F94DB00021D26 /* AddressBook.framework */; };
@@ -130,7 +138,18 @@
 		6DE7967C163DC100004FF988 /* RiskResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskResultsViewController.h; sourceTree = "<group>"; };
 		6DE7967D163DC101004FF988 /* RiskResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskResultsViewController.m; sourceTree = "<group>"; };
 		6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskResultsViewController.xib; sourceTree = "<group>"; };
-		6DE79683163DD66F004FF988 /* RiskAssessment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RiskAssessment.png; sourceTree = "<group>"; };
+		6DEF947A16410D68006769AD /* WelcomeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomeHeart.png; sourceTree = "<group>"; };
+		6DEF947D1641163B006769AD /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		6DEF947E1641163B006769AD /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		6DEF947F1641163B006769AD /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		6DEF948216411698006769AD /* CreateProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateProfileViewController.h; sourceTree = "<group>"; };
+		6DEF948316411698006769AD /* CreateProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProfileViewController.m; sourceTree = "<group>"; };
+		6DEF948416411698006769AD /* CreateProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateProfileViewController.xib; sourceTree = "<group>"; };
+		6DEF948716411707006769AD /* HealthRiskAssessment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HealthRiskAssessment.png; sourceTree = "<group>"; };
+		6DEF9496164121B2006769AD /* ConnectWithFacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ConnectWithFacebook.png; sourceTree = "<group>"; };
+		6DEF9498164125EA006769AD /* RiskResultsViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskResultsViewController2.h; sourceTree = "<group>"; };
+		6DEF9499164125EB006769AD /* RiskResultsViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskResultsViewController2.m; sourceTree = "<group>"; };
+		6DEF949A164125EB006769AD /* RiskResultsViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskResultsViewController2.xib; sourceTree = "<group>"; };
 		6DF9887B163E1F0F00021D26 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		6DF9887C163E1F0F00021D26 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		6DF9887D163E1F0F00021D26 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -169,8 +188,6 @@
 		6D1D3EA1162DD98A003F8764 = {
 			isa = PBXGroup;
 			children = (
-				6DF98891163F94E100021D26 /* AddressBookUI.framework */,
-				6DF9888F163F94DB00021D26 /* AddressBook.framework */,
 				6D1D3EB6162DD98A003F8764 /* HealthyBytes */,
 				6D1D3ED7162DD98A003F8764 /* HealthyBytesTests */,
 				6D1D3EAF162DD98A003F8764 /* Frameworks */,
@@ -190,6 +207,8 @@
 		6D1D3EAF162DD98A003F8764 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DF98891163F94E100021D26 /* AddressBookUI.framework */,
+				6DF9888F163F94DB00021D26 /* AddressBook.framework */,
 				6D1D3EF2162DEDDC003F8764 /* CoreLocation.framework */,
 				6D1D3EF4162DEDEA003F8764 /* MapKit.framework */,
 				6D1D3EB0162DD98A003F8764 /* UIKit.framework */,
@@ -227,6 +246,15 @@
 				6DE7967C163DC100004FF988 /* RiskResultsViewController.h */,
 				6DE7967D163DC101004FF988 /* RiskResultsViewController.m */,
 				6DE7967E163DC101004FF988 /* RiskResultsViewController.xib */,
+				6DEF9498164125EA006769AD /* RiskResultsViewController2.h */,
+				6DEF9499164125EB006769AD /* RiskResultsViewController2.m */,
+				6DEF949A164125EB006769AD /* RiskResultsViewController2.xib */,
+				6DEF948216411698006769AD /* CreateProfileViewController.h */,
+				6DEF948316411698006769AD /* CreateProfileViewController.m */,
+				6DEF948416411698006769AD /* CreateProfileViewController.xib */,
+				6DEF947D1641163B006769AD /* ProfileViewController.h */,
+				6DEF947E1641163B006769AD /* ProfileViewController.m */,
+				6DEF947F1641163B006769AD /* ProfileViewController.xib */,
 				6D1D3EB7162DD98A003F8764 /* Supporting Files */,
 			);
 			path = HealthyBytes;
@@ -311,7 +339,9 @@
 		6DE79685163DD674004FF988 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				6DE79683163DD66F004FF988 /* RiskAssessment.png */,
+				6DEF948716411707006769AD /* HealthRiskAssessment.png */,
+				6DEF947A16410D68006769AD /* WelcomeHeart.png */,
+				6DEF9496164121B2006769AD /* ConnectWithFacebook.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -393,8 +423,13 @@
 				6D402E5516324AB40097D1D8 /* HealthRiskAssessmentViewController.xib in Resources */,
 				6DE7966B163A86E5004FF988 /* SmokeInfoViewController.xib in Resources */,
 				6DE79680163DC101004FF988 /* RiskResultsViewController.xib in Resources */,
-				6DE79684163DD66F004FF988 /* RiskAssessment.png in Resources */,
 				6DF9887F163E1F1000021D26 /* WelcomeViewController.xib in Resources */,
+				6DEF947B16410D68006769AD /* WelcomeHeart.png in Resources */,
+				6DEF94811641163B006769AD /* ProfileViewController.xib in Resources */,
+				6DEF948616411698006769AD /* CreateProfileViewController.xib in Resources */,
+				6DEF948816411707006769AD /* HealthRiskAssessment.png in Resources */,
+				6DEF9497164121B2006769AD /* ConnectWithFacebook.png in Resources */,
+				6DEF949C164125EB006769AD /* RiskResultsViewController2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +488,9 @@
 				6DE79672163C6667004FF988 /* HbA1cPickerView.m in Sources */,
 				6DE7967F163DC101004FF988 /* RiskResultsViewController.m in Sources */,
 				6DF9887E163E1F1000021D26 /* WelcomeViewController.m in Sources */,
+				6DEF94801641163B006769AD /* ProfileViewController.m in Sources */,
+				6DEF948516411698006769AD /* CreateProfileViewController.m in Sources */,
+				6DEF949B164125EB006769AD /* RiskResultsViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

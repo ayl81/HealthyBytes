@@ -1,18 +1,18 @@
 //
-//  WelcomeViewController.m
+//  RiskResultsViewController2.m
 //  HealthyBytes
 //
-//  Created by Alda Luong on 10/28/12.
+//  Created by Alda Luong on 10/31/12.
 //  Copyright (c) 2012 Alda Luong. All rights reserved.
 //
 
-#import "WelcomeViewController.h"
+#import "RiskResultsViewController2.h"
 
+@interface RiskResultsViewController2 ()
 
+@end
 
-@implementation WelcomeViewController
-
-@synthesize healthRiskAssessmentViewController;
+@implementation RiskResultsViewController2
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Welcome";
 }
 
 - (void)viewDidUnload
@@ -40,13 +39,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
--(IBAction)start:(id)sender
-{
-    self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController" bundle:nil];
-    self.healthRiskAssessmentViewController.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
-    [self.navigationController pushViewController:self.healthRiskAssessmentViewController animated:YES];
 }
 
 @end
