@@ -137,7 +137,7 @@
 
 -(void)goHome
 {
-    HomeViewController *hvc = [[HomeViewController alloc] initWithNibName:@"HomeViewcontroller" bundle:nil];
+    HomeViewController *hvc = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     hvc.profileCreated = YES;
     [self.navigationController pushViewController:hvc animated:YES];
 }

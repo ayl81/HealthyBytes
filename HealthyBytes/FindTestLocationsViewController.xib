@@ -163,7 +163,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="160604235">
+					<object class="IBUIImageView" id="328042540">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{101, 224}, {99, 76}}</string>
@@ -251,7 +251,7 @@
 							<reference ref="845809410"/>
 							<reference ref="409418157"/>
 							<reference ref="428370284"/>
-							<reference ref="160604235"/>
+							<reference ref="328042540"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -288,7 +288,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
-						<reference key="object" ref="160604235"/>
+						<reference key="object" ref="328042540"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>

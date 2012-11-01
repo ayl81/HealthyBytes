@@ -8,11 +8,9 @@
 
 #import "CreateProfileViewController.h"
 
-@interface CreateProfileViewController ()
-
-@end
-
 @implementation CreateProfileViewController
+
+@synthesize nameTextField, emailTextField, passwordTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +26,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Login";
+    [self.nameTextField setDelegate:self];
+    [self.nameTextField setReturnKeyType:UIReturnKeyDone];
+    [self.nameTextField addTarget:self
+                       action:@selector(nameTextFieldFinished:)
+             forControlEvents:UIControlEventEditingDidEndOnExit];
 }
 
 - (void)viewDidUnload
@@ -45,6 +48,11 @@
 -(IBAction)createProfileButton:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

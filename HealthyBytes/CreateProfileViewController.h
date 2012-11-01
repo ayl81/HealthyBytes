@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateProfileViewController : UIViewController
+@class ProfileViewController;
+
+@interface CreateProfileViewController : UIViewController<UITextFieldDelegate>
 
 -(IBAction)createProfileButton:(id)sender;
+
+@property(nonatomic, retain) IBOutlet UITextField *nameTextField;
+@property(nonatomic, retain) IBOutlet UITextField *emailTextField;
+@property(nonatomic, retain) IBOutlet UITextField *passwordTextField;
+
 
 @end
