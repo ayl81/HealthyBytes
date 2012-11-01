@@ -7,6 +7,7 @@
 //
 
 #import "FindTestLocationsViewController.h"
+#import "HomeViewController.h"
 
 @implementation FindTestLocationsViewController
 
@@ -16,6 +17,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(goHome)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
     
 }
 
@@ -130,6 +133,13 @@
 {
     // dismiss the keyboard upon a scroll
     [self.searchStringTextField resignFirstResponder];
+}
+
+-(void)goHome
+{
+    HomeViewController *hvc = [[HomeViewController alloc] initWithNibName:@"HomeViewcontroller" bundle:nil];
+    hvc.profileCreated = YES;
+    [self.navigationController pushViewController:hvc animated:YES];
 }
 
 @end

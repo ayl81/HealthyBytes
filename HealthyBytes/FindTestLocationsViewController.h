@@ -13,6 +13,8 @@
 #define SureScriptAPIKey @"3a0a572b-4f5d-47a2-9a75-819888576454"
 #define MAX_RESULTS 10
 
+@class HomeViewController;
+
 @interface FindTestLocationsViewController : UIViewController <CLLocationManagerDelegate, UIScrollViewDelegate>
 {
     CLLocationManager *locationManager;

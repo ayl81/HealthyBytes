@@ -19,6 +19,8 @@
 #import "RiskResultsViewController.h"
 #import "CreateProfileViewController.h"
 
+//@class HomeViewController;
+
 @interface HealthRiskAssessmentViewController : UITableViewController <UIGestureRecognizerDelegate, UIAlertViewDelegate>
 {
     HealthRiskAssessmentQuestions *healthRiskAssessmentQuestions;
@@ -112,5 +114,7 @@
 @property (nonatomic, retain) UILabel *smokeLabel;
 @property (nonatomic, retain) UILabel *heartAttackLabel;
 @property (nonatomic, retain) UILabel *diabetesLabel;
+
+-(void)goHome:(id)selector;
 
 @end

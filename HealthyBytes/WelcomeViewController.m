@@ -9,6 +9,7 @@
 #import "WelcomeViewController.h"
 
 
+@class HomeViewController;
 
 @implementation WelcomeViewController
 
@@ -18,7 +19,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -44,9 +44,14 @@
 
 -(IBAction)start:(id)sender
 {
+    /*
     self.healthRiskAssessmentViewController = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController" bundle:nil];
     self.healthRiskAssessmentViewController.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
     [self.navigationController pushViewController:self.healthRiskAssessmentViewController animated:YES];
+     */
+    HomeViewController *hvc = [[HomeViewController alloc] init];
+    [self.navigationController pushViewController:hvc animated:YES];
+
 }
 
 -(IBAction)loginButtonAction:(id)sender

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RiskResultsViewController2.h"
 
+@class HomeViewController ;
 @interface RiskResultsViewController : UIViewController
 
 -(IBAction)nextLabel:(id)sender;

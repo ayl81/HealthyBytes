@@ -7,6 +7,7 @@
 //
 
 #import "HealthRiskAssessmentViewController.h"
+//#import "HomeViewController.h"
 
 @implementation HealthRiskAssessmentViewController
 
@@ -21,6 +22,11 @@
         self.heartAttack = @"No";
         self.stroke = @"No";
         self.diabetes = @"No";
+        
+        // add home button
+/*        UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(goHome)];
+        self.navigationItem.rightBarButtonItem = anotherButton;
+ */
     }
     NSLog(@"nib name: %@", nibNameOrNil);
     return self;
@@ -84,9 +90,6 @@
     [footerView addSubview:calculateRisk];
     
     self.tableView.tableFooterView = footerView;
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Do you want to create a profile to save your data?" delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"OK!", nil];
-    [alert show];
 }
 
 - (void)viewDidUnload
@@ -792,15 +795,10 @@
     NSLog(data);
 }
 
-// UIAlertView Delegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+/*
+-(void)goHome
 {
-    NSLog(@"Button Pressed: %d", buttonIndex);
-    if (buttonIndex == 1)
-    {
-        // OK button clicked
-        CreateProfileViewController *cpvc = [[CreateProfileViewController alloc] init];
-        [self.navigationController pushViewController:cpvc animated:YES];
-    }
-}
+    HomeViewController *hvc = [[HomeViewController alloc] initWithNibName:@"HomeViewcontroller" bundle:nil];
+    [self.navigationController pushViewController:hvc animated:YES];
+}*/
 @end

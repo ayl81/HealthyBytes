@@ -42,5 +42,38 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction)remindMeButtonAction:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]    initWithTitle:nil
+                                                                delegate:nil
+                                                       cancelButtonTitle:nil
+                                                  destructiveButtonTitle:nil
+                                                       otherButtonTitles:nil];
+    
+    [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+    
+    [actionSheet addButtonWithTitle:@"Add to Google Calendar"];
+    [actionSheet addButtonWithTitle:@"Email me periodically"];
+    [actionSheet addButtonWithTitle:@"Cancel"];
+    [actionSheet showInView:self.view];
+}
+
+-(IBAction)sendResultsButtonAction:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]    initWithTitle:nil
+                                                                delegate:nil
+                                                       cancelButtonTitle:nil
+                                                  destructiveButtonTitle:nil
+                                                       otherButtonTitles:nil];
+    
+    [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+    
+    [actionSheet addButtonWithTitle:@"Email Me"];
+    [actionSheet addButtonWithTitle:@"Text Me"];
+    [actionSheet addButtonWithTitle:@"Email My Doctor"];
+    [actionSheet addButtonWithTitle:@"Copy to Microsoft Vault"];
+    [actionSheet addButtonWithTitle:@"Cancel"];
+    [actionSheet showInView:self.view];
+}
 
 @end

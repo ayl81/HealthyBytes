@@ -10,6 +10,7 @@
 #import "HealthRiskAssessmentViewController.h"
 #import "ProfileViewController.h"
 #import "LoginViewController.h"
+#import "HomeViewController.h"
 
 @interface WelcomeViewController : UIViewController
 {

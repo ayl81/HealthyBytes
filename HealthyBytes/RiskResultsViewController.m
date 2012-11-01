@@ -7,7 +7,7 @@
 //
 
 #import "RiskResultsViewController.h"
-
+#import "HomeViewController.h"
 
 @implementation RiskResultsViewController
 
@@ -15,7 +15,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(goHome)];
+        self.navigationItem.rightBarButtonItem = anotherButton;
     }
     return self;
 }
@@ -42,6 +43,13 @@
 -(IBAction)nextLabel:(id)sender
 {
     [self.navigationController pushViewController:[[RiskResultsViewController2 alloc] init] animated:YES];
+}
+
+-(void)goHome
+{
+    HomeViewController *hvc = [[HomeViewController alloc] initWithNibName:@"HomeViewcontroller" bundle:nil];
+    hvc.profileCreated = YES;
+    [self.navigationController pushViewController:hvc animated:YES];
 }
 
 @end

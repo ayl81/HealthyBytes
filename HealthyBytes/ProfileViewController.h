@@ -10,4 +10,6 @@
 
 @interface ProfileViewController : UIViewController
 
+-(IBAction)remindMeButtonAction:(id)sender;
+-(IBAction)sendResultsButtonAction:(id)sender;
 @end
