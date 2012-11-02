@@ -10,6 +10,7 @@
 		6D07A1B116437D1F000EC8E3 /* HealthRiskAssessment2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D07A1B016437D1F000EC8E3 /* HealthRiskAssessment2.png */; };
 		6D07A1BD16439841000EC8E3 /* HealthRiskAssessmentViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D07A1BB16439841000EC8E3 /* HealthRiskAssessmentViewController2.m */; };
 		6D07A1BE16439841000EC8E3 /* HealthRiskAssessmentViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D07A1BC16439841000EC8E3 /* HealthRiskAssessmentViewController2.xib */; };
+		6D07A1C41643C5B3000EC8E3 /* heartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D07A1C31643C5B3000EC8E3 /* heartIcon.png */; };
 		6D1D3EB1162DD98A003F8764 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D3EB0162DD98A003F8764 /* UIKit.framework */; };
 		6D1D3EB3162DD98A003F8764 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D3EB2162DD98A003F8764 /* Foundation.framework */; };
 		6D1D3EB5162DD98A003F8764 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D3EB4162DD98A003F8764 /* CoreGraphics.framework */; };
@@ -87,6 +88,7 @@
 		6D07A1BA16439841000EC8E3 /* HealthRiskAssessmentViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthRiskAssessmentViewController2.h; sourceTree = "<group>"; };
 		6D07A1BB16439841000EC8E3 /* HealthRiskAssessmentViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthRiskAssessmentViewController2.m; sourceTree = "<group>"; };
 		6D07A1BC16439841000EC8E3 /* HealthRiskAssessmentViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HealthRiskAssessmentViewController2.xib; sourceTree = "<group>"; };
+		6D07A1C31643C5B3000EC8E3 /* heartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartIcon.png; sourceTree = "<group>"; };
 		6D1D3EAC162DD98A003F8764 /* HealthyBytes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyBytes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1D3EB0162DD98A003F8764 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6D1D3EB2162DD98A003F8764 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -373,6 +375,7 @@
 		6DE79685163DD674004FF988 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6D07A1C31643C5B3000EC8E3 /* heartIcon.png */,
 				6D07A1B016437D1F000EC8E3 /* HealthRiskAssessment2.png */,
 				6DB680201642650A003AFE7C /* FBShare.png */,
 				6DB6801E16425AE6003AFE7C /* profileFacePhoto.png */,
@@ -477,6 +480,7 @@
 				6DB680211642650A003AFE7C /* FBShare.png in Resources */,
 				6D07A1B116437D1F000EC8E3 /* HealthRiskAssessment2.png in Resources */,
 				6D07A1BE16439841000EC8E3 /* HealthRiskAssessmentViewController2.xib in Resources */,
+				6D07A1C41643C5B3000EC8E3 /* heartIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

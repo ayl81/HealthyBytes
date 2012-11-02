@@ -11,7 +11,9 @@
 
 @implementation HealthRiskAssessmentViewController
 
-@synthesize healthRiskAssessmentQuestion, riskResultsViewController, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, hbA1cPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, systolic, diastolic, totalCholesterol, hdl, ldl, HbA1c, smokeActionSheet, tap, smokeLabel, heartAttackLabel,diabetesLabel;
+@synthesize healthRiskAssessmentQuestion, actionSheet, pickerFrame, agePickerView, genderPickerView, heightPickerView, weightPickerView, smokePickerView, heartAttackPickerView, strokePickerView, diabetesPickerView, age, gender, height, weight, smoke, heartAttack, stroke, diabetes, smokeActionSheet, smokeLabel, heartAttackLabel,diabetesLabel;
+
+// riskResultsViewController, systolicPickerView, diastolicPickerView, totalCholesterolPickerView, hdlPickerView, ldlPickerView, hbA1cPickerView, systolic, diastolic, totalCholesterol, hdl, ldl, HbA1c,
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -76,13 +78,13 @@
     self.diabetesLabel.backgroundColor = [UIColor clearColor];
     
     
-    // create a UIButton (Deconnect button)
+    // create the "Next" button
     UIButton *calculateRisk = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     calculateRisk.frame = CGRectMake(0, 20, 280, 40);
-    [calculateRisk setTitle:@"Calculate Risk" forState:UIControlStateNormal];
+    [calculateRisk setTitle:@"Next" forState:UIControlStateNormal];
     calculateRisk.backgroundColor = [UIColor clearColor];
     [calculateRisk setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [calculateRisk addTarget:self action:@selector(calculateRiskButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [calculateRisk addTarget:self action:@selector(nextHealthRiskAssessmentPage) forControlEvents:UIControlEventTouchUpInside];
     calculateRisk.tintColor = [UIColor blueColor];
     
     //create a footer view on the bottom of the tabeview
@@ -90,6 +92,8 @@
     [footerView addSubview:calculateRisk];
     
     self.tableView.tableFooterView = footerView;
+    
+    self.navigationItem.title = @"Assessment";
 }
 
 - (void)viewDidUnload
@@ -109,7 +113,8 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 5;
+    //return 5;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -125,7 +130,7 @@
         case 1:
             rows = 3;           // health 
             break;
-        case 2:
+        /*case 2:
             rows = 1;           // diabetes
             break;
         case 3:
@@ -133,7 +138,7 @@
             break;
         case 4:
             rows = 3;           // cholestrol
-            break;
+            break;*/
         default:
             break;
     }
@@ -262,7 +267,7 @@
         
     }
     
-    if (indexPath.section == 2)
+/*    if (indexPath.section == 2)
     {
         cellText = @"HbA1c";
         
@@ -317,7 +322,7 @@
                 break;
         }
     }
-    
+*/
     cell.textLabel.text = cellText;
     return cell;
 }
@@ -331,7 +336,7 @@
         case 1:
             title = @"Has a doctor ever told you that you had a:";
             break;
-        case 2:
+        /*case 2:
             title = @"Diabetes";
             break;
         case 3:
@@ -339,7 +344,7 @@
             break;
         case 4:
             title = @"Cholesterol";
-            break;
+            break;*/
         default:
             break;
     }
@@ -354,7 +359,7 @@
             break;
         case 1:
             break;
-        case 2:
+        /*case 2:
             title = @"skip this section if you do not have diabetes";
             break;
         case 3:
@@ -362,7 +367,7 @@
             break;
         case 4:
             title = @"skip this section if you have not been screened in the last year";
-            break;
+            break;*/
         default:
             break;
     }
@@ -472,8 +477,7 @@
                 break;
         }
     }
-    
-    
+    /*    
     if (indexPath.section == 2)
     {
         switch (indexPath.row)
@@ -545,7 +549,7 @@
             default:
                 break;
         }
-    }
+    }*/
     [actionSheet addSubview:closeButton];
     [self.actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
     
@@ -674,7 +678,7 @@
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:diabetesIP, nil] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
 }
-
+/*
 - (void)dismissHbA1cActionSheet:(id)sender
 {
     if (self.actionSheet && [self.actionSheet isVisible])
@@ -764,7 +768,8 @@
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:ldlIP, nil] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
 }
-
+ */
+/*
 - (IBAction)calculateRiskButtonAction:(id)sender
 {
     [self queryRisks];
@@ -794,11 +799,18 @@
     NSString *data=[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
     NSLog(data);
 }
+*/
 
-/*
--(void)goHome
+-(void)nextHealthRiskAssessmentPage
 {
-    HomeViewController *hvc = [[HomeViewController alloc] initWithNibName:@"HomeViewcontroller" bundle:nil];
-    [self.navigationController pushViewController:hvc animated:YES];
-}*/
+    HealthRiskAssessmentViewController2 *hravc2 = [[HealthRiskAssessmentViewController2 alloc] initWithNibName:@"HealthRiskAssessmentViewController2" bundle:nil];
+    hravc2.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
+    hravc2.age = self.age;
+    hravc2.gender = self.gender;
+    hravc2.height = self.height;
+    hravc2.weight = self.weight;
+    hravc2.smoke = self.smoke;
+    
+    [self.navigationController pushViewController:hravc2 animated:YES];
+}
 @end

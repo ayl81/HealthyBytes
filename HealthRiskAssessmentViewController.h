@@ -16,15 +16,15 @@
 #import "BloodPressurePickerView.h"
 #import "CholesterolPickerView.h"
 #import "HbA1cPickerView.h"
-#import "RiskResultsViewController.h"
 #import "CreateProfileViewController.h"
+#import "HealthRiskAssessmentViewController2.h"
 
 //@class HomeViewController;
 
 @interface HealthRiskAssessmentViewController : UITableViewController <UIGestureRecognizerDelegate, UIAlertViewDelegate>
 {
     HealthRiskAssessmentQuestions *healthRiskAssessmentQuestions;
-    RiskResultsViewController *riskResultsViewController;
+//    RiskResultsViewController *riskResultsViewController;
     
     // picker view stuff
     UIActionSheet *actionSheet;
@@ -38,12 +38,12 @@
     YesNoPickerView *heartAttackPickerView;
     YesNoPickerView *strokePickerView;
     YesNoPickerView *diabetesPickerView;
-    BloodPressurePickerView *systolicPickerView;
+/*    BloodPressurePickerView *systolicPickerView;
     BloodPressurePickerView *diastolicPickerView;
     CholesterolPickerView *totalPickerView;
     CholesterolPickerView *hdlPickerView;
     CholesterolPickerView *ldlPickerView;
-    HbA1cPickerView *hbA1cPickerView;
+    HbA1cPickerView *hbA1cPickerView;*/
     
     // labels for user selection on table (for customized cells)
     UILabel *smokeLabel;
@@ -59,12 +59,12 @@
     NSString *heartAttack;
     NSString *stroke;
     NSString *diabetes;
-    NSString *systolic;
+/*    NSString *systolic;
     NSString *diastolic;
     NSString *totalCholesterol;
     NSString *hdl;
     NSString *ldl;
-    NSString *HbA1c;
+    NSString *HbA1c;*/
     
     UIColor *colorOfInfoCells;
 }
@@ -76,7 +76,7 @@
 - (IBAction)calculateRiskButtonAction:(id)sender;
 
 @property (nonatomic, retain) HealthRiskAssessmentQuestions *healthRiskAssessmentQuestion;
-@property (nonatomic, retain) RiskResultsViewController *riskResultsViewController;
+//@property (nonatomic, retain) RiskResultsViewController *riskResultsViewController;
 @property (nonatomic, retain) UIActionSheet *actionSheet;
 @property (nonatomic, retain) UIActionSheet *smokeActionSheet;
 @property (nonatomic, retain) AgePickerView *agePickerView;
@@ -87,12 +87,12 @@
 @property (nonatomic, retain) YesNoPickerView *heartAttackPickerView;
 @property (nonatomic, retain) YesNoPickerView *strokePickerView;
 @property (nonatomic, retain) YesNoPickerView *diabetesPickerView;
-@property (nonatomic, retain) BloodPressurePickerView *systolicPickerView;
+/*@property (nonatomic, retain) BloodPressurePickerView *systolicPickerView;
 @property (nonatomic, retain) BloodPressurePickerView *diastolicPickerView;
 @property (nonatomic, retain) CholesterolPickerView *totalCholesterolPickerView;
 @property (nonatomic, retain) CholesterolPickerView *hdlPickerView;
 @property (nonatomic, retain) CholesterolPickerView *ldlPickerView;
-@property (nonatomic, retain) HbA1cPickerView *hbA1cPickerView;
+@property (nonatomic, retain) HbA1cPickerView *hbA1cPickerView;*/
 @property (nonatomic) CGRect pickerFrame;
 @property (nonatomic, retain) NSString *age;
 @property (nonatomic, retain) NSString *gender;
@@ -102,19 +102,15 @@
 @property (nonatomic, retain) NSString *heartAttack;
 @property (nonatomic, retain) NSString *stroke;
 @property (nonatomic, retain) NSString *diabetes;
-@property (nonatomic, retain) NSString *systolic;
+/*@property (nonatomic, retain) NSString *systolic;
 @property (nonatomic, retain) NSString *diastolic;
 @property (nonatomic, retain) NSString *totalCholesterol;
 @property (nonatomic, retain) NSString *hdl;
 @property (nonatomic, retain) NSString *ldl;
-@property (nonatomic, retain) NSString *HbA1c;
-
-@property (nonatomic, retain) UITapGestureRecognizer *tap;
+@property (nonatomic, retain) NSString *HbA1c;*/
 
 @property (nonatomic, retain) UILabel *smokeLabel;
 @property (nonatomic, retain) UILabel *heartAttackLabel;
 @property (nonatomic, retain) UILabel *diabetesLabel;
-
--(void)goHome:(id)selector;
 
 @end
