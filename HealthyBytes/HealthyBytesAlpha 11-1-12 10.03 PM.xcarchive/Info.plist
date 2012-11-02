@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppStoreFileSize</key>
+	<integer>932084</integer>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/HealthyBytes.app</string>
+		<key>CFBundleIdentifier</key>
+		<string>com.flippedbits.HealthyBytes</string>
+		<key>CFBundleShortVersionString</key>
+		<string>1.0</string>
+		<key>CFBundleVersion</key>
+		<string>1.0</string>
+		<key>SigningIdentity</key>
+		<string>iPhone Developer: Alda Luong (2G46ZL6699)</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2012-11-02T05:03:46Z</date>
+	<key>Name</key>
+	<string>HealthyBytesAlpha</string>
+	<key>SchemeName</key>
+	<string>HealthyBytes</string>
+</dict>
+</plist>
