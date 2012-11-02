@@ -11,6 +11,7 @@
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 
+@class HomeViewController;
 
 @interface MapViewController : UIViewController <MKMapViewDelegate, ABPersonViewControllerDelegate>
 {

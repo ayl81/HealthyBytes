@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class ProfileViewController;
+@class HealthRiskAssessmentViewController;
 
 @interface CreateProfileViewController : UIViewController<UITextFieldDelegate>
 

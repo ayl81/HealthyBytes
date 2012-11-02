@@ -514,7 +514,7 @@
         }
     }
     
-    if (indexPath.section == 3)
+    if (indexPath.section == 4)
     {
         switch (indexPath.row)
         {

@@ -7,12 +7,10 @@
 //
 
 #import "LoginViewController.h"
-
-@interface LoginViewController ()
-
-@end
+#import "HomeViewController.h"
 
 @implementation LoginViewController
+@synthesize emailTextField, passwordTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,4 +39,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction)loginButtonAction:(id)sender
+{
+    HomeViewController *hvc = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    hvc.profileCreated = YES;
+    [self.navigationController pushViewController:hvc animated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 @end

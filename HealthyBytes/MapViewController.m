@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "HomeViewController.h"
 
 @implementation MapViewController
 
@@ -60,6 +61,9 @@
         
         [self.mapView addAnnotation:testLocationAnnotation];
     }
+    
+    UIBarButtonItem *homeButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(goHome)];
+    self.navigationItem.rightBarButtonItem = homeButton;
 }
 
 - (void)viewDidUnload
@@ -166,4 +170,10 @@
 }
 
 
+-(void)goHome
+{
+    HomeViewController *hvc = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    hvc.profileCreated = YES;
+    [self.navigationController pushViewController:hvc animated:YES];
+}
 @end

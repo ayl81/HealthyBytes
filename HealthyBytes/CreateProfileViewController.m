@@ -7,6 +7,7 @@
 //
 
 #import "CreateProfileViewController.h"
+#import "HealthRiskAssessmentViewController.h"
 
 @implementation CreateProfileViewController
 
@@ -47,7 +48,10 @@
 
 -(IBAction)createProfileButton:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    HealthRiskAssessmentViewController *hravc = [[HealthRiskAssessmentViewController alloc] initWithNibName:@"HealthRiskAssessmentViewController" bundle:nil];
+    hravc.healthRiskAssessmentQuestion = [[HealthRiskAssessmentQuestions alloc] init];
+    [self.navigationController pushViewController:hravc animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
